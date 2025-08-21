@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社員紹介 | Lumpcore</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="employee.css" />
+</head>
+
+<body class="bg-default">
+  <div class="background-wrapper"></div>
+
+  <!-- ヘッダー：ロゴとナビゲーション -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Lumpcore</h1>
+        <span class="subtitle">Recruit</span>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">
+              <div class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="../index.html#purpose">Purpose</a></li>
+              <li><a href="../index.html#mission">Mission</a></li>
+              <li><a href="../index.html#employee-interviews">夢忠人紹介</a></li>
+              <li><a href="../index.html#business">事業紹介</a></li>
+              <li><a href="../index.html#news">ニュース</a></li>
+              <li><a href="../index.html#contact">お問い合わせ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインセクション：社員詳細 -->
+  <main>
+    <div class="employee-detail-container">
+      <img id="employee-photo" alt="社員写真" />
+      <h2 id="employee-name"></h2>
+      <p id="employee-role"></p>
+      <p id="employee-mbti"></p>
+      <div id="employee-interview"></div>
+    </div>
+  </main>
+
+  <!-- スクリプトの読み込み -->
+  <script src="employee.js"></script>
+  <script src="../scripts.js"></script>
+</body>
+</html>

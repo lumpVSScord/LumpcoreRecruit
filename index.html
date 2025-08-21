@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lumpcore Recruit</title>
+        <!-- 🔽 Preloadをここに追加 -->
+        <link rel="preload" as="image" href="assets/images/logo.png">
+        <link rel="preload" as="image" href="assets/images/team/team1.jpg">
+        <link rel="preload" as="image" href="assets/images/team/team9.jpg">
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho:wght@400&display=swap" rel="stylesheet"> <!-- Hina Minchoフォントを使用 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!--リンクアイコン用-->
+    </head>                 
+
+    <body class="bg-default">
+        <div class="background-wrapper"></div>
+
+    <header id="header" class="hidden">
+        <div class="container">
+            <div class="logo">
+                <h1>Lumpcore</h1>
+                <span class="subtitle">Recruit</span>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <div class="menu-icon">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#purpose">Purpose</a></li>
+                            <li><a href="#mission">Mission</a></li>
+                            <li><a href="#employee-interviews">夢忠人紹介</a></li>
+                            <li><a href="#business">事業紹介</a></li>
+                            <li><a href="#news">ニュース</a></li>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="top-image">
+        <!-- 上段スライド（フェードイン付き） -->
+        <div class="carousel-row top hidden fade-in">
+            <div class="carousel-track" id="carousel-track-top"></div>
+        </div>
+
+        <!--奥-->
+        <div class="carousel-row top back">
+            <div class="carousel-track" id="carousel-track-top-back"></div>
+        </div>
+
+        <!-- 中央ロゴ -->
+        <div class="text-container">
+            <img src="assets/images/logo/lumpcore-logo.png" alt="LUMPCOREロゴ" class="centered-logo">
+        </div>
+        
+        <!-- 下段スライド（フェードイン付き） -->
+        <div class="carousel-row bottom hidden fade-in">
+            <div class="carousel-track" id="carousel-track-bottom"></div>
+        </div>
+
+        <!--奥-->
+        <div class="carousel-row bottom back">
+            <div class="carousel-track" id="carousel-track-bottom-back"></div>
+        </div>
+    </section>
+
+    <section id="purpose" class="glass-section">
+    <div class="glass-card">
+        <img src="assets/images/purpose-visual.png" alt="株式会社ランプコア　パーパス" class="section-image">
+        <div class="overlay-text">
+        <h3>Let’s Enjoy Life</h3>
+        <h4>- 人の心に夢と楽しさを -</h4>
+        </div>
+        </div>
+        <p>"Let’s Enjoy Life-人の心に夢と楽しさを-"というパーパスには、日常に埋もれがちな"ワクワク"や""夢見る心"を蘇らせ、人と人を共感でつなぎ、一瞬一瞬をかけがえのない体験へと昇華させるという強い思いが込められています。
+            私たちはこの言葉を心に刻み、若手"夢忠人"の創造力と情熱を結集してお客様の心を揺さぶる驚きと喜びを生み出し続けることで、ブランドと生活者の深い共感を育み、新たな価値を創造してまいります。
+        </p>
+    </section>
+ 
+    <section id="mission" class="glass-section">
+    <div class="glass-card">
+    <img src="assets/images/mission-visual.png" alt="株式会社ランプコア　ミッション" class="section-image">
+        <div class="overlay-text mission-text">
+        <h3>夢を笑われない<br>社会を作る</h3>
+        </div>
+    </div>
+        <p>学歴や社歴に左右されず、努力する人すべてにチャンスが届き、夢を語ると笑われる風潮を変える社会を創る。
+            私たちは仲間の夢を讃え合う"夢忠人"として、自ら夢を体現し、その成果で会社と社会に貢献します。
+            社員一人ひとりが人生の当事者として100%の楽しさを届けられる。
+            ランプコアは夢を語れずにいる人の背中を押し、共に夢をかなえる舞台です。
+        </p>
+    </section>
+
+    <section id="employee-interviews" class="hidden fade-in">
+    <h2>夢忠人紹介</h2>
+    <div class="employee-grid"></div>
+    <button id="load-more-btn">もっと見る</button>
+    </section>
+
+    <section id="business" class="hidden fade-in">
+        <h2>事業紹介</h2>
+        <div class="business-container">
+
+            <div class="business-item">
+                <img src="assets/images/business/coordinator.jpg" alt="人材コーディネーター" class="business-image">
+                <div class="business-description">
+                    <h3>人材コーディネーター</h3>
+                    <p>千葉県を中心に全国の携帯ショップおよび家電量販店にて弊社の常勤スタッフ、スポットスタッフがイベント、販売業務、接客、案内などを行います。</p>
+                    <a href="https://example.com/coordinator-details" class="m-buttons-img-txt-08-arrow-wrap" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span> 詳細を見る
+                    </a>
+                </div>
+            </div>
+
+            <div class="business-item">
+                <img src="assets/images/business/artist.jpg" alt="わたあめアーティスト" class="business-image">
+                <div class="business-description">
+                    <h3>わたあめアーティスト</h3>
+                    <p>販促イベントにおける集客手法として、お客様体験型のわたあめ作りイベントを行います。専用の機械と専任のわたあめアーティストにより、NPSの高いイベントを実現致します。</p>
+                    <a href="https://example.com/artist-details" class="m-buttons-img-txt-08-arrow-wrap" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span> 詳細を見る
+                    </a>
+                </div>
+            </div>
+
+            <div class="business-item">
+                <img src="assets/images/business/consulting.jpg" alt="歯科コンサルティング" class="business-image">
+                <div class="business-description">
+                    <h3>歯科コンサルティング</h3>
+                    <p>歯科クリニック向けに人的資本経営の導入へ向けた経営コンサルティング、並びにタレントマネジメントシステムの運用代行・採用支援・DXコンサルティングなど企業の経営課題に合わせた支援で、売上向上を実現致します。</p>
+                    <a href="https://example.com/consulting-details" class="m-buttons-img-txt-08-arrow-wrap" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span> 詳細を見る
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="news" class="hidden fade-in">
+        <h2>ニュース</h2>
+        <div class="filter-container">
+            <label for="news-filter">カテゴリ:</label>
+            <select id="news-filter">
+                <option value="all">すべて</option>
+                <option value="採用">採用</option>
+                <!-- 他のカテゴリ -->
+            </select>
+        </div>
+        <ul id="news-list">
+            <!-- ニュース項目がここに追加されます -->
+        </ul>
+    </section>
+
+    <section id="contact" class="hidden fade-in">
+        <h2>お問い合わせ</h2>
+        <p>お問い合わせ</p>
+        <a href="line://app">LINEで応募</a>
+    </section>
+
+    <div id="entry-nav-wrap" class="entry-nav-wrap bottom-right">
+        <a href="#apply" class="entry-nav-link apply">
+            <span class="icon">📄</span>
+            <span class="text">応募</span>
+        </a>
+        <a href="#requirements" class="entry-nav-link requirements">
+            <span class="icon">📋</span>
+            <span class="text">募集要項</span>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="employee/employee.js"></script>
+
+</body>
+</html>
