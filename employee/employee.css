@@ -1,4 +1,41 @@
 /* 社員紹介セクションに関係するスタイル */
+
+/* 社員詳細ページのレイアウトを画面いっぱいに */
+.employee-detail-container {
+  margin-top: 120px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.employee-card {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  background: none;
+  border-radius: 0;
+  padding: 40px 0;
+  box-shadow: none;
+}
+
+#employee-name {
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.role-tag,
+.mbti-tag {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+.role-tag { background: #fff59d; }
+.mbti-tag { background: #b3e5fc; }
+
 .qa-block {
   margin-bottom: 40px;
   animation: fadeIn 0.6s ease;
@@ -9,78 +46,59 @@
   transform: translateY(0);
 }
 
+
 .question {
-  align-self: flex-start;
-  max-width: 70%;
-  background: #ffe4f1;
-  color: #c71585;
-  padding: 15px 20px;
-  border-radius: 20px 20px 20px 0;
+  max-width: 80%;
+  background: #bbdefb;
+  color: #0d47a1;
+  padding: 20px;
+  border-radius: 0 16px 16px 16px;
   position: relative;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto 20px 0;
+  text-align: left;
 }
 
 .question::after {
   content: "";
   position: absolute;
   left: -10px;
-  bottom: 0;
+  top: 20px;
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-right-color: #ffe4f1;
+  border-right-color: #bbdefb;
   border-left: 0;
-  border-bottom: 0;
-  margin-bottom: -10px;
+  border-top: 0;
 }
 
-.answer-wrap {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.photo-icon {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  border-radius: 16px;
-  padding: 4px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
-
-.photo-icon img {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  object-fit: cover;
-}
 
 .answer {
-  max-width: 70%;
-  background: #ffffffdd;
-  padding: 15px 20px;
-  border-radius: 20px 20px 0 20px;
+  max-width: 80%;
+  background: #ffe082;
+  color: #e65100;
+  padding: 20px;
+  border-radius: 16px 0 16px 16px;
   position: relative;
-  color: #333;
-  backdrop-filter: blur(4px);
-  border: 1px solid #ccc;
-  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 40px auto;
+  text-align: right;
 }
 
 .answer::after {
   content: "";
   position: absolute;
   right: -10px;
-  top: 0;
+  top: 20px;
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-left-color: #ffffffdd;
+  border-left-color: #ffe082;
   border-right: 0;
   border-top: 0;
-  margin-top: -10px;
 }
 
 @keyframes fadeIn {
@@ -106,17 +124,6 @@
 
 .profile-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-}
-
-.profile-photo {
   width: 160px;
   height: auto;
   object-fit: cover;
@@ -142,13 +149,17 @@
   margin-bottom: 24px;
 }
 
-/* 社員詳細の画像をヘッダーの下に配置 */
+/* 社員詳細の画像をポップに表示 */
 #employee-photo {
+  width: 60%;
+  max-width: 400px;
   display: block;
-  width: 100%;
-  max-height: 500px;
+  margin: 20px auto;
+  border-radius: 0;
+  border: 6px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   object-fit: cover;
-  margin-top: 80px; /* ← ヘッダー分の余白を追加 */
+  aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 768px) {
@@ -163,5 +174,9 @@
 
   .profile-info {
     text-align: center;
+  }
+
+  #employee-photo {
+    width: 100%;
   }
 }
