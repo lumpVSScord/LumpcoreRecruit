@@ -957,6 +957,7 @@ nav ul li a:hover {
 
 .business-description {
     text-align: left;
+    flex: 1;
 }
 
 .business-description h3 {
@@ -970,7 +971,6 @@ nav ul li a:hover {
 }
 
 .m-buttons-img-txt-08-arrow-wrap {
-    display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
     background: linear-gradient(45deg, #4169e1, #ff69b4);
@@ -980,6 +980,7 @@ nav ul li a:hover {
     transition: background 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .m-buttons-img-txt-08-arrow-wrap .icon {
@@ -991,7 +992,6 @@ nav ul li a:hover {
     background: linear-gradient(45deg, #ff69b4, #4169e1);
     transform: translateY(-2px);
 }
-
 
 /* =============================================
 📰 ニュースセクション（#news）
@@ -1199,6 +1199,7 @@ nav ul li a:hover {
 
   .business-description {
     width: 100%;
+    flex: none;
   }
 
   .employee-card {
