@@ -10,7 +10,6 @@
         <link rel="preload" as="image" href="assets/images/team/team9.jpg">
 
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho:wght@400&display=swap" rel="stylesheet"> <!-- Hina Minchoフォントを使用 -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!--リンクアイコン用-->
     </head>                 
@@ -77,7 +76,7 @@
 
     <section id="purpose" class="glass-section">
     <div class="glass-card">
-        <img src="assets/images/purpose-visual.png" alt="株式会社ランプコア　パーパス" class="section-image">
+        <img src="assets/images/purpose-visual.png" alt="株式会社ランプコア　パーパス" class="section-image" loading="lazy">
         <div class="overlay-text">
         <h3>Let’s Enjoy Life</h3>
         <h4>- 人の心に夢と楽しさを -</h4>
@@ -90,7 +89,7 @@
  
     <section id="mission" class="glass-section">
     <div class="glass-card">
-    <img src="assets/images/mission-visual.png" alt="株式会社ランプコア　ミッション" class="section-image">
+    <img src="assets/images/mission-visual.png" alt="株式会社ランプコア　ミッション" class="section-image" loading="lazy">
         <div class="overlay-text mission-text">
         <h3>夢を笑われない<br>社会を作る</h3>
         </div>
@@ -113,7 +112,7 @@
         <div class="business-container">
 
             <div class="business-item">
-                <img src="assets/images/business/coordinator.jpg" alt="人材コーディネーター" class="business-image">
+                <img src="assets/images/business/coordinator.jpg" alt="人材コーディネーター" class="business-image" loading="lazy">
                 <div class="business-description">
                     <h3>人材コーディネーター</h3>
                     <p>千葉県を中心に全国の携帯ショップおよび家電量販店にて弊社の常勤スタッフ、スポットスタッフがイベント、販売業務、接客、案内などを行います。</p>
@@ -124,7 +123,7 @@
             </div>
 
             <div class="business-item">
-                <img src="assets/images/business/artist.jpg" alt="わたあめアーティスト" class="business-image">
+                <img src="assets/images/business/artist.jpg" alt="わたあめアーティスト" class="business-image" loading="lazy">
                 <div class="business-description">
                     <h3>わたあめアーティスト</h3>
                     <p>販促イベントにおける集客手法として、お客様体験型のわたあめ作りイベントを行います。専用の機械と専任のわたあめアーティストにより、NPSの高いイベントを実現致します。</p>
@@ -135,7 +134,7 @@
             </div>
 
             <div class="business-item">
-                <img src="assets/images/business/consulting.jpg" alt="歯科コンサルティング" class="business-image">
+                <img src="assets/images/business/consulting.jpg" alt="歯科コンサルティング" class="business-image" loading="lazy">
                 <div class="business-description">
                     <h3>歯科コンサルティング</h3>
                     <p>歯科クリニック向けに人的資本経営の導入へ向けた経営コンサルティング、並びにタレントマネジメントシステムの運用代行・採用支援・DXコンサルティングなど企業の経営課題に合わせた支援で、売上向上を実現致します。</p>
@@ -180,9 +179,8 @@
         </a>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="employee/employee.js"></script>
+    <script src="script.js" defer></script>
+    <script src="employee/employee.js" defer></script>
 
 </body>
 </html>
