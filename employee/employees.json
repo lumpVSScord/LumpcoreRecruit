@@ -5,6 +5,7 @@
     "role": "チーフクローザー",
     "mbti": "ESFP",
     "photo": "employee1.jpg",
+    "joinedDate": "2020年4月入社",
     "caption": "笑顔で接客中！",
     "theme": "#ff69b4",
     "interview": [
@@ -37,6 +38,7 @@
     "role": "トレーニングマネージャー",
     "mbti": "ESTJ",
     "photo": "employee2.jpg",
+    "joinedDate": "2021年6月入社",
     "caption": "AI作動中",
     "theme": "#4169e1",
     "interview": [
@@ -69,6 +71,7 @@
     "role": "課長補佐",
     "mbti": "ISTJ",
     "photo": "employee3.jpg",
+    "joinedDate": "2023年5月入社",
     "caption": "パワー発動中！",
     "theme": "#00ced1",
     "interview": [
@@ -101,6 +104,7 @@
     "role": "チームリーダー",
     "mbti": "ENTJ",
     "photo": "employee4.jpg",
+    "joinedDate": "2022年3月入社",
     "caption": "地面師中！",
     "theme": "#8a2be2",
     "interview": [

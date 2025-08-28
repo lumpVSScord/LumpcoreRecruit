@@ -16,7 +16,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
 }
 
 html, body {
@@ -808,52 +808,64 @@ nav ul li a:hover {
 }
 
 .employee-name {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin: 0;
-  padding: 6px 12px;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  border-radius: 4px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 /* テキストを画像上に重ねる */
-.employee-info-overlay {
+.employee-info {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
-  color: #fff;
-  text-align: left;
-  box-sizing: border-box;
-  display: flex;
+  bottom: 48px;
+  left: 16px;
+  display: inline-flex;
   flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  width: max-content;
 }
 
-.employee-info-overlay h4 {
-  font-size: 1.2em;
-  margin-bottom: 4px;
-  font-weight: bold;
+.join-date {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-weight: 500;
 }
 
-.employee-info-overlay p {
-  font-size: 0.95em;
-  margin: 0;
+.employee-name-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px 4px 0 0;
+}
+
+.employee-info .mbti-label {
+  align-self: stretch;
+  display: block;
+  text-align: center;
+  padding: 8px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 0 0 4px 4px;
 }
 
 /* 詳細リンクボタン */
 .detail-link {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
   display: inline-block;
-  margin-top: 0.4rem;
   padding: 0.4rem 1rem;
   background: linear-gradient(to right, #6a11cb, #2575fc);
   color: #fff;
   border-radius: 8px;
   font-size: 0.85rem;
   text-decoration: none;
-  margin-left: auto;
 }
 
 .detail-link:hover {
@@ -912,9 +924,9 @@ nav ul li a:hover {
 /* MBTI ラベルの共通スタイル */
 .mbti-label {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.6rem;
   border-radius: 4px;
   color: #fff;
 }
@@ -922,7 +934,7 @@ nav ul li a:hover {
 /* カラー分類 */
 .mbti-analyst { background: #8e44ad; }   /* 分析家（紫） */
 .mbti-diplomat { background: #27ae60; }  /* 外交官（緑） */
-.mbti-sentinel { background: #2980b9; }  /* 実務家（青） */
+.mbti-sentinel { background: #41b6e6; }  /* 実務家（青） */
 .mbti-explorer { background: #e67e22; }  /* 探検家（橙） */
 
 .image-bg.employee1 {

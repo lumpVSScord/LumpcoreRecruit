@@ -28,21 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const perLoad = 3;
 
       const createCard = (emp) => {
-        const card = document.createElement("div");
+        const card = document.createElement("a");
         card.className = "employee-card fade-in";
+        card.href = `employee/detail.html?id=${emp.id}`;
         card.innerHTML = `
             <div class="image-wrapper" style="background-image: url('assets/images/interview/${emp.photo}');">
               <span class="role-tag">${emp.role}</span>
-              <div class="employee-info-overlay">
-                <h4 class="employee-name">${emp.name}</h4>
-                <div class="card-footer">
-                  <span class="mbti-label ${getMbtiClass(emp.mbti)}">${emp.mbti}</span>
-                  <a href="employee/detail.html?id=${emp.id}" class="detail-link">詳細を見る</a>
+              <span class="join-date">${emp.joinedDate}</span>
+              <div class="employee-info">
+                <div class="employee-name-overlay">
+                  <h4 class="employee-name">${emp.name}</h4>
                 </div>
+                <span class="mbti-label ${getMbtiClass(emp.mbti)}">${emp.mbti}</span>
               </div>
+              <span class="detail-link"><i class="fas fa-arrow-right"></i> 詳細を見る</span>
             </div>`;
         return card;
       };
+
 
       const loadMore = () => {
         const slice = data.slice(currentIndex, currentIndex + perLoad);
