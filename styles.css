@@ -774,25 +774,22 @@ nav ul li a:hover {
 }
 
 /* コメント部分 */
-.employee-caption {
+.role-tag {
   position: absolute;
   top: 10px;
-  right: 10px;
-  background: rgba(255, 105, 180, 0.85); /* ピンク系 */
-  color: white;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: 600;
   padding: 6px 12px;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   z-index: 2;
-  pointer-events: none;
   white-space: nowrap;
-  backdrop-filter: blur(4px);
 }
 
 @media (max-width: 480px) {
-  .employee-caption {
+  .role-tag {
     font-size: 0.65rem;
     padding: 4px 10px;
   }
@@ -811,16 +808,14 @@ nav ul li a:hover {
 }
 
 .employee-name {
+  display: inline-block;
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 0.3rem;
+  margin: 0;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
-}
-
-.employee-role {
-  font-size: 0.85rem;
-  margin-bottom: 0.3rem;
-  color: #ddd;
+  border-radius: 4px;
 }
 
 /* テキストを画像上に重ねる */
@@ -833,6 +828,8 @@ nav ul li a:hover {
   color: #fff;
   text-align: left;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .employee-info-overlay h4 {
@@ -856,6 +853,7 @@ nav ul li a:hover {
   border-radius: 8px;
   font-size: 0.85rem;
   text-decoration: none;
+  margin-left: auto;
 }
 
 .detail-link:hover {
@@ -903,23 +901,29 @@ nav ul li a:hover {
   opacity: 0.85;
 }
 
+/* フッター行 (MBTIと詳細リンク) */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
 /* MBTI ラベルの共通スタイル */
 .mbti-label {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.2rem 0.5rem;
-  border-radius: 10px;
-  margin-bottom: 0.3rem;
-  background-color: #666;
+  border-radius: 4px;
   color: #fff;
 }
 
 /* カラー分類 */
-.mbti-analyst { background: linear-gradient(45deg, #4169e1, #8a2be2); }   /* 分析家（青紫） */
-.mbti-diplomat { background: linear-gradient(45deg, #2ecc71, #27ae60); }  /* 外交官（緑） */
-.mbti-sentinel { background: linear-gradient(45deg, #f39c12, #d35400); }  /* 実務家（橙） */
-.mbti-explorer { background: linear-gradient(45deg, #ff69b4, #e74c3c); }  /* 探検家（赤ピンク） */
+.mbti-analyst { background: #8e44ad; }   /* 分析家（紫） */
+.mbti-diplomat { background: #27ae60; }  /* 外交官（緑） */
+.mbti-sentinel { background: #2980b9; }  /* 実務家（青） */
+.mbti-explorer { background: #e67e22; }  /* 探検家（橙） */
 
 .image-bg.employee1 {
   background-image: url('assets/images/interview/employee1.jpg');

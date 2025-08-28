@@ -32,12 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
         card.className = "employee-card fade-in";
         card.innerHTML = `
             <div class="image-wrapper" style="background-image: url('assets/images/interview/${emp.photo}');">
-              <span class="employee-caption">${emp.caption}</span>
+              <span class="role-tag">${emp.role}</span>
               <div class="employee-info-overlay">
-                <span class="mbti-label ${getMbtiClass(emp.mbti)}">${emp.mbti}</span>
                 <h4 class="employee-name">${emp.name}</h4>
-                <p class="employee-role">${emp.role || emp.department || ""}</p>
-                <a href="employee/detail.html?id=${emp.id}" class="detail-link">詳細を見る</a>
+                <div class="card-footer">
+                  <span class="mbti-label ${getMbtiClass(emp.mbti)}">${emp.mbti}</span>
+                  <a href="employee/detail.html?id=${emp.id}" class="detail-link">詳細を見る</a>
+                </div>
               </div>
             </div>`;
         return card;

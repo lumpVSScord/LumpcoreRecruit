@@ -2,7 +2,7 @@
   {
     "id":0,
     "name": "北村 晃平",
-    "role": "モバイル事業部",
+    "role": "チーフクローザー",
     "mbti": "ESFP",
     "photo": "employee1.jpg",
     "caption": "笑顔で接客中！",
@@ -34,7 +34,7 @@
   {
     "id":1,
     "name": "渡合 広明",
-    "role": "モバイル事業部",
+    "role": "トレーニングマネージャー",
     "mbti": "ESTJ",
     "photo": "employee2.jpg",
     "caption": "AI作動中",
@@ -66,7 +66,7 @@
   {
     "id": 2,
     "name": "宮崎 優強",
-    "role": "モバイル事業部",
+    "role": "課長補佐",
     "mbti": "ISTJ",
     "photo": "employee3.jpg",
     "caption": "パワー発動中！",
@@ -98,7 +98,7 @@
   {
     "id": 3,
     "name": "黒井 彪雅",
-    "role": "モバイル事業部",
+    "role": "チームリーダー",
     "mbti": "ENTJ",
     "photo": "employee4.jpg",
     "caption": "地面師中！",
