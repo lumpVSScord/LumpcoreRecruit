@@ -17,8 +17,25 @@ function toggleClass(el, className, condition) {
   }
 }
 
+// ニュースリストの表示（テスト可能な関数）
+function displayNews(filter, newsList, newsData) {
+  newsList.innerHTML = '';
+  const filtered = filter === 'all' ? newsData : newsData.filter(news => news.category === filter);
+  filtered.slice(0, 3).forEach(news => {
+    const item = document.createElement('li');
+    item.innerHTML = `<span>${news.date}</span><span>${news.title}</span>`;
+    newsList.appendChild(item);
+  });
+}
+
+// Node.js 環境ではテスト用にエクスポート
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { displayNews };
+}
+
 // トップ画像アニメーション完了後にセクションを表示
 window.addEventListener('load', function () {
+  if (typeof module !== 'undefined') return;
   const topImage = document.getElementById('top-image');
   const entryNavWrap = document.getElementById('entry-nav-wrap');
 
@@ -46,6 +63,7 @@ window.addEventListener('load', function () {
 
 // DOM読み込み時の初期処理
 document.addEventListener('DOMContentLoaded', function () {
+  if (typeof module !== 'undefined') return;
   // 無限カルーセル用の画像パス
   const imagePath = "assets/images/team/";
 
@@ -164,22 +182,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const newsList = document.getElementById('news-list');
   const newsFilter = document.getElementById('news-filter');
 
-  function displayNews(filter) {
-    newsList.innerHTML = '';
-    const filtered = filter === 'all' ? newsData : newsData.filter(news => news.category === filter);
-    filtered.slice(0, 3).forEach(news => {
-      const item = document.createElement('li');
-      item.innerHTML = `<span>${news.date}</span><span>${news.title}</span>`;
-      newsList.appendChild(item);
-    });
-  }
-
-  newsFilter.addEventListener('change', () => displayNews(newsFilter.value));
-  displayNews('all');
+  newsFilter.addEventListener('change', () => displayNews(newsFilter.value, newsList, newsData));
+  displayNews('all', newsList, newsData);
 });
 
 // スクロールによる背景・ナビ表示切り替え
 window.addEventListener('scroll', function () {
+  if (typeof module !== 'undefined') return;
   const header = document.getElementById('header');
   const entryNavWrap = document.getElementById('entry-nav-wrap');
   const show = window.scrollY > window.innerHeight * 0.75;
