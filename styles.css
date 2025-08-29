@@ -1250,9 +1250,18 @@ nav ul li a:hover {
     flex: none;
   }
 
+  .employee-grid {
+    display: block;
+  }
+
   .employee-card {
-    max-width: 90%;
-    margin: 40px auto;
+    width: 100%;
+    max-width: none;
+    margin: 20px 0;
+  }
+
+  #load-more-btn {
+    display: none;
   }
 
   .info-card {
