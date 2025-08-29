@@ -158,14 +158,64 @@
     flex: none;
   }
 
+  /* 社員カードを2列に並べるグリッド設定 */
   .employee-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+    gap: 12px; /* カード間の余白 */
   }
 
+  /* 個々の社員カードサイズ調整 */
   .employee-card {
     width: 100%;
     max-width: none;
-    margin: 20px 0;
+    margin: 0;
+  }
+
+  /* 画像が正方形になるように比率を固定 */
+  .employee-card .image-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+  }
+
+  /* 役職タグを縮小 */
+  .employee-card .role-tag {
+    font-size: 0.5rem;
+    padding: 2px 6px;
+  }
+
+  /* 名前やMBTIなどの情報位置とサイズ調整 */
+  .employee-card .employee-info {
+    bottom: 20px;
+    left: 6px;
+  }
+
+  .employee-card .employee-name-overlay {
+    padding: 3px 6px;
+  }
+
+  .employee-card .employee-name {
+    font-size: 0.6rem;
+  }
+
+  .employee-card .employee-info .mbti-label {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+
+  /* 入社日ラベルを縮小 */
+  .employee-card .join-date {
+    bottom: 6px;
+    left: 6px;
+    font-size: 0.5rem;
+  }
+
+  /* 詳細リンクを縮小 */
+  .employee-card .detail-link {
+    bottom: 6px;
+    right: 6px;
+    font-size: 0.6rem;
   }
 
   #load-more-btn {
