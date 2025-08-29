@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <span class="mbti-label ${getMbtiClass(emp.mbti)}">${emp.mbti}</span>
               </div>
-              <span class="detail-link"><i class="fas fa-arrow-right"></i> 詳細を見る</span>
+              <span class="detail-link">夢忠人を知る <i class="fas fa-arrow-up-right-from-square"></i></span>
             </div>`;
         return card;
       };

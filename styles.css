@@ -746,6 +746,7 @@ nav ul li a:hover {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .employee-card:hover {
@@ -859,17 +860,31 @@ nav ul li a:hover {
   position: absolute;
   bottom: 16px;
   right: 16px;
-  display: inline-block;
-  padding: 0.4rem 1rem;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: #fff;
-  border-radius: 8px;
   font-size: 0.85rem;
-  text-decoration: none;
+  background: linear-gradient(45deg, #4169e1, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-flex;
+  align-items: center;
+}
+.employee-card:hover .detail-link {
+  text-decoration: underline;
 }
 
-.detail-link:hover {
-  background: linear-gradient(45deg, #ff69b4, #4169e1);
+.detail-link i {
+  margin-left: 4px;
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: rotate(180deg);
+  transition: transform 0.4s ease;
+}
+
+.employee-card:hover .detail-link i {
+  transform: rotate(360deg) translate(-3px, 3px);
 }
 
 /* 詳細ページの文章 */
