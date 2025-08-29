@@ -1,0 +1,265 @@
+/* Mobile responsive styles extracted from styles.css */
+
+@media (max-width: 480px) {
+  .role-tag {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+}
+
+/* ======================= */
+/* レスポンシブ対応 768px 以下用 */
+/* ======================= */
+@media (max-width: 768px) {
+
+  .background-wrapper {
+    background-image: url('assets/images/backgrounds/headerbackground-mobile.png');
+    background-size: cover; /* ← contain → cover に変更 */
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  body.bg-scrolled .background-wrapper {
+    background-image: url('assets/images/backgrounds/newbackground-mobile.png');
+  }
+
+  /*スクロールで背景を変えたい場合このコードを削除*/
+  body.bg-scrolled .background-wrapper {
+    background-image: url('assets/images/backgrounds/headerbackground-mobile.png'); /* ← 初期背景と同じに固定 */
+  }
+
+  header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* ← 必ず dropdown より上に */
+  }
+
+  #top-image {
+    margin-bottom: -150px ; /* ← 余白を縮める */
+  }
+
+  .carousel-row.top {
+    top: 15%;
+  }
+
+  .carousel-row.bottom {
+    bottom: 15%;
+  }
+
+  .carousel-track img,
+  .slide-track img {
+    width: auto;
+    height: 120px; /* アスペクト比を保ったまま縮小 */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .carousel-track {
+    gap: 16px; /* 間隔を縮めて2枚表示を狙う */
+  }
+
+  .centered-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: scale(1.6);
+    transform-origin: center;
+  }
+
+  .text-container {
+    top: 45%; /* ← 中央よりやや上に */
+    transform: translate(-50%, -50%);
+  }
+
+  .text-container h1,
+  .centered-text {
+    font-size: 2.5rem;
+  }
+
+  .centered-logo {
+  opacity: 0;
+  animation: fadeZoomIn 1.2s ease-out 0.5s forwards;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 8px;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 60px; /* ← headerの高さに合わせて調整（例: 60px） */
+    height: calc(100vh - 60px);
+    left: 0;
+    width: 100vw;
+    z-index: 9999; /* header より下に */
+    background: linear-gradient(135deg, rgba(65, 105, 225, 0.95), rgba(255, 105, 180, 0.95));
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .dropdown-menu.visible {
+    display: flex;
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 20px;
+  }
+
+  .dropdown-menu li a {
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: left;
+  }
+
+  .dropdown-menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-icon {
+    position: relative; /* 必須：z-index を効かせるため */
+    z-index: 10001;     /* dropdown-menu（9999）より上に！ */
+  }
+
+  .business-container {
+    flex-direction: column;
+  }
+
+  .business-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .business-image {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .business-description {
+    width: 100%;
+    flex: none;
+  }
+
+  .employee-grid {
+    display: block;
+  }
+
+  .employee-card {
+    width: 100%;
+    max-width: none;
+    margin: 20px 0;
+  }
+
+  #load-more-btn {
+    display: none;
+  }
+
+  .info-card {
+    width: 90%;
+    bottom: -80px;
+  }
+
+  .entry-nav-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* ← ここを12px → 24pxや30pxなどに */
+    padding: 6px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .entry-nav-link {
+    width: 120px;
+    text-align: center;
+    padding: 6px 0;
+    color: #fff;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+
+  .entry-nav-link:last-child {
+    border-right: none;
+  }
+
+  .entry-nav-link .icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+
+  .entry-nav-link .text {
+    font-size: 0.75rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  #purpose h2, #mission h2 {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  #purpose h3, #purpose h4, #mission h3 {
+    font-size: 1.5rem;
+  }
+
+  #purpose p, #mission p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .overlay-text h3 {
+    font-size: 2.5rem !important;
+  }
+
+  .overlay-text h4 {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+
+  .overlay-text {
+    top: 33%; /* モバイルではもう少し上に調整 */
+  }
+
+  .mission-text {
+    top: 37%; /* ← MISSIONだけ下げる */
+  }
+
+  .mission-text h3 {
+    font-size: 1.5rem !important; /* ← もとの4remから少し小さく */
+  }
+
+  #news-list li {
+    font-size: 0.95em;
+    padding: 15px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
