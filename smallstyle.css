@@ -30,7 +30,7 @@
 
   header {
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   z-index: 1000; /* ← 必ず dropdown より上に */
@@ -41,17 +41,17 @@
   }
 
   .carousel-row.top {
-    top: 15%;
+    top: 17%;
   }
 
   .carousel-row.bottom {
-    bottom: 15%;
+    bottom: 20%;
   }
 
   .carousel-track img,
   .slide-track img {
     width: auto;
-    height: 120px; /* アスペクト比を保ったまま縮小 */
+    height: 170px; /* アスペクト比を保ったまま縮小 */
     object-fit: cover;
     border-radius: 12px;
   }
