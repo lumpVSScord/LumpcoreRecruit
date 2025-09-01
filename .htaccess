@@ -1,0 +1,11 @@
+# すべてのHTTPアクセスをHTTPSへリダイレクト
+RewriteEngine On
+
+# HTTPSでアクセスしていない場合のみリダイレクトする
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://recruit.lumpcore.co.jp%{REQUEST_URI} [R=301,L]
+
+# 任意：HSTSヘッダーでHTTPS利用をブラウザに強制（有効期間は1年）
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
