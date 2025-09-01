@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       let currentIndex = 0;
-      const perLoad = 3;
+      const perLoad = window.matchMedia('(max-width: 768px)').matches ? 4 : 3;
 
       const createCard = (emp) => {
         const card = document.createElement("a");

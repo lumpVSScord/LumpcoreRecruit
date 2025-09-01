@@ -162,7 +162,9 @@
   .employee-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2列表示 */
-    gap: 12px; /* カード間の余白 */
+    gap: 12px; /* カード同士の余白 */
+    padding: 2px; /* 外側の余白を縮めてカードを拡大 */
+    margin: 0;
   }
 
   /* 個々の社員カードサイズ調整 */
@@ -170,6 +172,16 @@
     width: 100%;
     max-width: none;
     margin: 0;
+    display: block;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid transparent;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
+      linear-gradient(135deg, #ff69b4, #4169e1) border-box;
+    backdrop-filter: blur(6px);
   }
 
   /* 画像が正方形になるように比率を固定 */
@@ -177,6 +189,8 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1; /* 正方形を維持 */
+    border-radius: inherit;
+    overflow: hidden;
   }
 
   /* 役職タグを縮小 */
@@ -219,7 +233,8 @@
   }
 
   #load-more-btn {
-    display: none;
+    display: block;
+    margin: 20px auto;
   }
 
   .info-card {
