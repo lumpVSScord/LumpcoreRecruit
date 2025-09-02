@@ -20,7 +20,6 @@ function toggleClass(el, className, condition) {
 // トップ画像アニメーション完了後にセクションを表示
 window.addEventListener('load', function () {
   const topImage = document.getElementById('top-image');
-  const entryNavWrap = document.getElementById('entry-nav-wrap');
 
   // 最初にトップスライドをフェードイン
   const carouselRows = document.querySelectorAll('#top-image .carousel-row');
@@ -33,7 +32,6 @@ window.addEventListener('load', function () {
     const allSections = document.querySelectorAll('section:not(#top-image), header');
     allSections.forEach(section => section.style.display = '');
 
-    entryNavWrap.style.display = 'flex';
   }
 
   topImage.addEventListener('animationend', function () {
