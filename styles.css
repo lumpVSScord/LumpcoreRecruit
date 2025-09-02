@@ -290,6 +290,13 @@ header.scrolled {
   z-index: 0;
   height: 220px;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carousel-row.visible {
+  opacity: 1;
+  pointer-events: none;
 }
 
 .carousel-row.top {
@@ -357,11 +364,9 @@ header.scrolled {
 @keyframes staggerFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -434,23 +439,6 @@ nav ul li a:hover {
   pointer-events: auto;
 }
 
-/* フェードイン用 */
-.fade-in {
-  animation: fadeIn 1.2s ease-out forwards;
-}
-
-/* アニメーション定義 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .entry-nav-wrap {
     position: fixed;
     bottom: 20px;
@@ -511,8 +499,6 @@ nav ul li a:hover {
 
 .hidden { opacity:0; }
 .visible { opacity:1; transition: opacity 1s ease-in-out; }
-.fade-in { animation: fadeIn 1s ease-in-out forwards; }
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
 .slide-in {
     animation: slideIn 1s ease-in-out;
@@ -716,16 +702,7 @@ nav ul li a:hover {
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: backgroundAnimation 5s ease infinite, fadeInUp 1.5s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: backgroundAnimation 5s ease infinite;
 }
 
 /* グリッドレイアウト */

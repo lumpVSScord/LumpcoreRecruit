@@ -22,6 +22,10 @@ window.addEventListener('load', function () {
   const topImage = document.getElementById('top-image');
   const entryNavWrap = document.getElementById('entry-nav-wrap');
 
+  // 最初にトップスライドをフェードイン
+  const carouselRows = document.querySelectorAll('#top-image .carousel-row');
+  carouselRows.forEach(row => showElement(row));
+
   function showSections() {
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach(el => showElement(el));
@@ -87,32 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: "carousel-track-bottom-back", images: bottomImages, dir: "right" },
   ];
 
-  const imagesMap = {
-    "carousel-track-top": topImages,
-    "carousel-track-bottom": bottomImages,
-    "carousel-track-top-back": topImages,
-    "carousel-track-bottom-back": bottomImages,
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        const dir = entry.target.dataset.dir;
-        setupInfiniteCarousel(id, imagesMap[id], dir);
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    rootMargin: "100px",
-    threshold: 0.1
-  });
-
-  targets.forEach(({ id, dir }) => {
-    const track = document.getElementById(id);
-    if (!track) return;
-    track.dataset.dir = dir;
-    observer.observe(track);
+  targets.forEach(({ id, images, dir }) => {
+    setupInfiniteCarousel(id, images, dir);
   });
 
   // ドロップダウンメニュー制御
