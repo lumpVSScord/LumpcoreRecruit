@@ -68,20 +68,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById(trackId);
     if (!track || track.dataset.loaded === 'true') return;
 
+    const loadPromises = [];
+
     for (let i = 0; i < 2; i++) {
       for (const src of imageList) {
         const img = document.createElement('img');
         img.src = src;
         img.alt = '社員写真';
-        img.loading = 'lazy';
+        // モバイル環境で画像の読み込みが遅れると
+        // アニメーションが開始されずスライドが止まってしまうことがあるため
+        // ヒーローセクションの画像は遅延読み込みを行わず即時に読み込む
+        img.loading = 'eager';
         img.classList.add('slide-img');
         track.appendChild(img);
+
+        if (!img.complete) {
+          loadPromises.push(new Promise(resolve => {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve);
+          }));
+        }
       }
     }
 
-    track.classList.add('carousel-animate');
-    track.classList.add(direction === 'left' ? 'animate-left' : 'animate-right');
-    track.dataset.loaded = 'true';
+    Promise.all(loadPromises).then(() => {
+      track.classList.add('carousel-animate');
+      track.classList.add(direction === 'left' ? 'animate-left' : 'animate-right');
+      track.dataset.loaded = 'true';
+    });
   }
 
   const targets = [
