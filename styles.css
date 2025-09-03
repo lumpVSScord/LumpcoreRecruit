@@ -79,6 +79,10 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.header-tagline {
+    display: none;
+}
+
 header.scrolled {
     background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
 }

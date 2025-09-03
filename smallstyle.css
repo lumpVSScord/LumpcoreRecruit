@@ -30,10 +30,69 @@
 
   header {
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 1000; /* ← 必ず dropdown より上に */
+  height: 110px; /* dropdown-menu offset と揃える */
+  padding: 10px 0; /* 上下の余白のみ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 下部に見出しを配置 */
+  transition: height 0.3s ease;
+  }
+
+  .header-tagline {
+    align-self: center;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px 6px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+    line-height: 1.2;
+    transition: opacity 0.3s ease;
+  }
+
+  .header-tagline .tagline-bang {
+    display: inline-block;
+    margin-left: 2px;
+    background: linear-gradient(90deg, var(--primary-start), var(--primary-end), var(--primary-start));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: headerBangGradient 1.5s linear infinite;
+  }
+
+  .header-tagline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
+  }
+
+  header.scrolled {
+    height: 60px;
+  }
+
+  header.scrolled .header-tagline {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  header.scrolled .dropdown-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
   }
 
   #top-image {
@@ -100,8 +159,8 @@
 
   .dropdown-menu {
     position: fixed;
-    top: 60px; /* ← headerの高さに合わせて調整（例: 60px） */
-    height: calc(100vh - 60px);
+    top: 110px; /* headerの高さに合わせて調整（110px） */
+    height: calc(100vh - 110px);
     left: 0;
     width: 100vw;
     z-index: 9999; /* header より下に */
@@ -322,9 +381,9 @@
     font-size: 0.95em;
     padding: 15px;
   }
+}
 
-  .filter-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@keyframes headerBangGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
