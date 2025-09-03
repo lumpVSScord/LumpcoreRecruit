@@ -39,6 +39,11 @@
   transition: height 0.3s ease;
   }
 
+  header.scrolled .dropdown-menu {
+    padding-top: 80px; /* header高さ60px + 余白20px */
+    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
+  }
+
   #top-image {
     margin-bottom: -150px ; /* ← 余白を縮める */
   }
@@ -103,18 +108,19 @@
 
   .dropdown-menu {
     position: fixed;
-    top: 110px; /* headerの高さに合わせて調整（110px） */
-    height: calc(100vh - 110px);
+    top: 0;
     left: 0;
     width: 100vw;
-    z-index: 9999; /* header より下に */
+    height: 100vh;
     background: #000;
     color: #fff;
-    padding: 20px;
+    padding: 130px 20px 20px; /* header高さ110px + 余白20px */
     display: none;
     flex-direction: column;
     overflow-y: auto;
     box-sizing: border-box;
+    transition: background 0.5s ease;
+    z-index: -1; /* ヘッダーより背面で背景を途切れさせない */
   }
 
   .dropdown-menu.visible {
@@ -133,6 +139,16 @@
 
   .dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.2);
+  }
+
+  .dropdown-menu li a:visited,
+  .dropdown-menu li a:active {
+    color: #fff;
+  }
+
+  .menu-icon {
+    position: relative; /* 必須：z-index を効かせるため */
+    z-index: 10001;     /* dropdown-menu(-1)より上に */
   }
 
   .menu-icon {

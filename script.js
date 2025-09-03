@@ -125,26 +125,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ドロップダウンリンクのホバー効果
-  const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
-  dropdownLinks.forEach(link => {
-    link.addEventListener('mouseover', () => {
-      link.style.transition = 'color 0.3s ease, background 0.3s ease, transform 0.3s ease';
-      link.style.color = '#fff';
-      link.style.background = 'linear-gradient(45deg, #4169e1, #ff69b4)';
-      link.style.transform = 'scale(1.1)';
-    });
-    link.addEventListener('mouseout', () => {
-      link.style.transition = 'color 0.3s ease, background 0.3s ease, transform 0.3s ease';
-      link.style.color = '#000080';
-      link.style.background = 'transparent';
-      link.style.transform = 'scale(1)';
-    });
-    link.addEventListener('click', () => {
+  dropdownMenu.addEventListener('click', function (e) {
+    if (e.target === dropdownMenu) {
       hideElement(dropdownMenu);
       menuIcon.classList.remove('open');
-    });
+    }
   });
+
+  // ドロップダウンリンクのホバー効果
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.transition = 'color 0.3s ease, background 0.3s ease, transform 0.3s ease';
+        link.style.color = '#fff';
+        link.style.background = 'linear-gradient(45deg, #4169e1, #ff69b4)';
+        link.style.transform = 'scale(1.1)';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.transition = 'color 0.3s ease, background 0.3s ease, transform 0.3s ease';
+        link.style.color = '#fff';
+        link.style.background = 'transparent';
+        link.style.transform = 'scale(1)';
+      });
+      link.addEventListener('click', () => {
+        hideElement(dropdownMenu);
+        menuIcon.classList.remove('open');
+      });
+    });
 
   // ニュースフィルタ機能
   const newsData = [
