@@ -68,7 +68,7 @@ p {
 🧭 ヘッダー・ナビゲーション・ドロップダウン（header, .nav-list, .menu-icon など）
 ============================================= */
 header {
-    background: rgba(255, 255, 255, 0);
+    background: #000;
     transition: background 0.5s ease;
     color: #fff;
     padding: 10px 0;
@@ -385,13 +385,13 @@ header.scrolled {
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 2px;
-  color: #000080;
+  color: #ffffff;
 }
 
 .subtitle {
   margin-left: 10px;
   font-size: 1em;
-  color: #000080;
+  color: #ffffff;
   opacity: 0.8;
 }
 
