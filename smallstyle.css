@@ -34,65 +34,9 @@
   left: 0;
   width: 100%;
   z-index: 1000; /* ← 必ず dropdown より上に */
-  height: 110px; /* dropdown-menu offset と揃える */
+  height: 60px; /* 元のヘッダー高さに戻す */
   padding: 10px 0; /* 上下の余白のみ */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 下部に見出しを配置 */
   transition: height 0.3s ease;
-  }
-
-  .header-tagline {
-    align-self: center;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px 6px 22px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 4px;
-    line-height: 1.2;
-    transition: opacity 0.3s ease;
-  }
-
-  .header-tagline .tagline-bang {
-    display: inline-block;
-    margin-left: 2px;
-    background: linear-gradient(90deg, var(--primary-start), var(--primary-end), var(--primary-start));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-size: 200% 100%;
-    animation: headerBangGradient 1.5s linear infinite;
-  }
-
-  .header-tagline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 8px;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
-  }
-
-  header.scrolled {
-    height: 60px;
-  }
-
-  header.scrolled .header-tagline {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  header.scrolled .dropdown-menu {
-    top: 60px;
-    height: calc(100vh - 60px);
   }
 
   #top-image {
@@ -164,7 +108,8 @@
     left: 0;
     width: 100vw;
     z-index: 9999; /* header より下に */
-    background: linear-gradient(135deg, rgba(65, 105, 225, 0.95), rgba(255, 105, 180, 0.95));
+    background: #000;
+    color: #fff;
     padding: 20px;
     display: none;
     flex-direction: column;

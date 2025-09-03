@@ -79,10 +79,6 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.header-tagline {
-    display: none;
-}
-
 header.scrolled {
     background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
 }
@@ -189,33 +185,34 @@ header.scrolled {
     position: absolute;
     top: 100%;
     right: 0;
-    background: linear-gradient(45deg, rgba(65, 105, 225, 0.5), rgba(255, 105, 180, 0.5)); /* 透明度を追加 */
+    background: #000;
+    color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
     z-index: 1000;
     padding: 10px;
     width: 200px;
-}
+  }
 
-.dropdown-menu li {
+  .dropdown-menu li {
     list-style: none;
     margin-bottom: 10px;
-}
+  }
 
-.dropdown-menu li a {
-    color: #000080;
+  .dropdown-menu li a {
+    color: #fff;
     text-decoration: none;
     padding: 10px 15px;
     display: block;
     transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
     border-radius: 5px;
-}
+  }
 
-.dropdown-menu li a:hover {
+  .dropdown-menu li a:hover {
     background: linear-gradient(45deg, #4169e1, #ff69b4);
     color: #fff;
-}
+  }
 
 @media (min-width: 769px) {
   .dropdown-menu.visible {
