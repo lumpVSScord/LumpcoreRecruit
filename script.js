@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const progress = docHeight > 0 ? scrollTop / docHeight : 0;
 
-        // 進行率が 20% を超えたら背景とナビを切り替え
-        const show = progress > 0.2;
+        // 進行率が 10% を超えたら背景とナビを切り替え
+        const show = progress > 0.1;
 
         toggleClass(header, 'scrolled', show);
         toggleClass(entryNavWrap, 'visible', show);
