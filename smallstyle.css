@@ -19,13 +19,20 @@
     background-position: center top;
   }
 
-  body.bg-scrolled .background-wrapper {
+  .background-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     background-image: url('assets/images/backgrounds/newbackground-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
 
-  /*スクロールで背景を変えたい場合このコードを削除*/
-  body.bg-scrolled .background-wrapper {
-    background-image: url('assets/images/backgrounds/headerbackground-mobile.png'); /* ← 初期背景と同じに固定 */
+  body.bg-scrolled .background-wrapper::after {
+    opacity: 1;
   }
 
   header {
@@ -35,8 +42,9 @@
   width: 100%;
   z-index: 1000; /* ← 必ず dropdown より上に */
   height: 60px; /* 元のヘッダー高さに戻す */
-  padding: 10px 0; /* 上下の余白のみ */
   transition: height 0.3s ease;
+  display: flex;
+  align-items: center;
   }
 
   header.scrolled .dropdown-menu {

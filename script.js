@@ -73,14 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const img = document.createElement('img');
         img.src = src;
         img.alt = '社員写真';
-        // モバイル環境で画像の読み込みが遅れると
-        // アニメーションが開始されずスライドが止まってしまうことがあるため
-        // ヒーローセクションの画像は遅延読み込みを行わず即時に読み込む
-        img.loading = 'eager';
+        // 1巡目のみ即時読み込みし、複製分は遅延読み込みして初期負荷を軽減
+        img.loading = i === 0 ? 'eager' : 'lazy';
         img.classList.add('slide-img');
         track.appendChild(img);
 
-        if (!img.complete) {
+        if (i === 0 && !img.complete) {
           loadPromises.push(new Promise(resolve => {
             img.addEventListener('load', resolve);
             img.addEventListener('error', resolve);
@@ -178,14 +176,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // スクロールによる背景・ナビ表示切り替え
-window.addEventListener('scroll', function () {
   const header = document.getElementById('header');
   const entryNavWrap = document.getElementById('entry-nav-wrap');
-  const show = window.scrollY > window.innerHeight * 0.75;
+  let docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-  toggleClass(header, 'scrolled', show);
-  toggleClass(entryNavWrap, 'visible', show);
-  toggleClass(entryNavWrap, 'hidden', !show);
-  toggleClass(document.body, 'bg-scrolled', show);
-  toggleClass(document.body, 'bg-default', !show);
-});
+  window.addEventListener('resize', () => {
+    docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  }, { passive: true });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        // ページ全体のスクロール進行率を算出
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
+        // 進行率が 20% を超えたら背景とナビを切り替え
+        const show = progress > 0.2;
+
+        toggleClass(header, 'scrolled', show);
+        toggleClass(entryNavWrap, 'visible', show);
+        toggleClass(entryNavWrap, 'hidden', !show);
+        toggleClass(document.body, 'bg-scrolled', show);
+        toggleClass(document.body, 'bg-default', !show);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
