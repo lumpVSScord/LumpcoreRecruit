@@ -721,7 +721,10 @@ nav ul li a:hover {
 
 .highlight {
     font-weight: bold;
-    background: linear-gradient(transparent 60%, rgba(255, 105, 180, 0.4) 60%);
+    background-image: linear-gradient(90deg, #b2d5de 0 25%, #ddcfb3 25% 50%, #b3ddb4 50% 75%, #ddbab3 75%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: bottom;
 }
 
 @keyframes backgroundAnimation {
