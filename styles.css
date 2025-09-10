@@ -698,7 +698,7 @@ nav ul li a:hover {
     position: relative;
     z-index: 0;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -710,13 +710,13 @@ nav ul li a:hover {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
-    opacity: 0.25;
+    opacity: 0.4;
     z-index: -1;
     transition: opacity 0.3s ease;
 }
 
 #purpose p:hover::before, #mission p:hover::before {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .highlight {
