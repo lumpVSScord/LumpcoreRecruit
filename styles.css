@@ -1000,17 +1000,30 @@ nav ul li a:hover {
 🏢 事業紹介セクション（#business）
 ============================================= */
 #business {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    padding: 40px 0;
+    border-radius: 0;
+    box-shadow: none;
     text-align: center;
+}
+
+#business h2 {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: bold;
+  margin-bottom: 40px;
+  background: linear-gradient(270deg, #4169e1, #c07ddf, #ff69b4);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: backgroundAnimation 5s ease infinite;
 }
 
 .business-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .business-item {
@@ -1019,6 +1032,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    width: 100%;
 }
 
 .business-item:hover {
