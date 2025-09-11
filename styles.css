@@ -1014,10 +1014,8 @@ nav ul li a:hover {
 }
 
 .business-item {
-    display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 20px;
+    position: relative;
+    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -1028,25 +1026,34 @@ nav ul li a:hover {
 }
 
 .business-image {
-    width: 300px; /* 元の150pxの二倍に設定 */
-    height: auto;
-    margin-right: 20px;
-    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 2200 / 840;
+    object-fit: cover;
+    display: block;
 }
 
 .business-description {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: min(60%, calc(100% - 40px));
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
     text-align: left;
-    flex: 1;
+    box-sizing: border-box;
 }
 
 .business-description h3 {
-    color: #4169e1;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .business-description p {
-    color: #333;
+    color: #fff;
     line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
 .m-buttons-img-txt-08-arrow-wrap {
