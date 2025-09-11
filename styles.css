@@ -4,6 +4,8 @@
 :root {
     --primary-start: #4169e1;
     --primary-end:   #ff69b4;
+    --primary-dark-start: #2d499d;
+    --primary-dark-end: #b2497d;
     --text-blue:    #4169e1;
   }
 
@@ -618,7 +620,7 @@ nav ul li a:hover {
   }
 
 .mission-text h3 {
-  font-size: 3.5rem !important;
+  font-size: 3rem !important;
 }
 
 /* 共通セクション背景 */
@@ -799,6 +801,15 @@ nav ul li a:hover {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* overlay-text uses its own centering transform, so combine it with fade-in offset */
+.overlay-text.fade-in {
+  transform: translate(-50%, -50%) translateY(20px);
+}
+
+.overlay-text.fade-in.visible {
+  transform: translate(-50%, -50%) translateY(0);
 }
 
 /* コメント部分 */

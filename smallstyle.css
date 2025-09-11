@@ -366,7 +366,7 @@
   }
 
   .mission-text h3 {
-    font-size: 1.5rem !important; /* ← もとの4remから少し小さく */
+    font-size: 2rem !important; /* 拡大してメッセージを強調 */
   }
 
   #news-list li {

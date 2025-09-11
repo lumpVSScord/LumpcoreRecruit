@@ -173,6 +173,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   newsFilter.addEventListener('change', () => displayNews(newsFilter.value));
   displayNews('all');
+
+  // IntersectionObserver を使ったフェードイン表示
+  const fadeObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 });
 
 // スクロールによる背景・ナビ表示切り替え
