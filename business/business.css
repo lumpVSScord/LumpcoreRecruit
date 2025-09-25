@@ -1,0 +1,180 @@
+:root {
+    --business-gradient-start: #4d3eff;
+    --business-gradient-end: #9c4dff;
+    --business-bg: #f6f4ff;
+    --business-card-bg: rgba(255, 255, 255, 0.82);
+    --business-card-border: rgba(255, 255, 255, 0.6);
+    --business-text: #2d2358;
+    --business-accent: #7c5cff;
+    --business-number: #c3b2ff;
+}
+
+body.business-page {
+    font-family: 'Noto Sans JP', 'Montserrat', 'Hina Mincho', sans-serif;
+    color: var(--business-text);
+    background: var(--business-bg);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-hero {
+    background: linear-gradient(160deg, rgba(77, 62, 255, 0.9), rgba(156, 77, 255, 0.85));
+    color: #fff;
+    padding: 80px 20px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-hero::before,
+.business-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(0.5px);
+}
+
+.business-hero::before {
+    width: 260px;
+    height: 260px;
+    top: -120px;
+    right: -80px;
+}
+
+.business-hero::after {
+    width: 160px;
+    height: 160px;
+    bottom: -80px;
+    left: -60px;
+}
+
+.hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.hero-inner h1 {
+    font-family: 'Hina Mincho', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 24px;
+}
+
+.hero-lead {
+    line-height: 1.8;
+    margin: 0 0 16px;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px 80px;
+}
+
+.business-section {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 24px;
+    box-shadow: 0 25px 70px rgba(107, 81, 255, 0.1);
+    padding: 32px 24px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.section-heading h2 {
+    font-size: 1.6rem;
+    margin: 0 0 16px;
+    color: var(--business-accent);
+    font-family: 'Hina Mincho', serif;
+}
+
+.section-summary {
+    margin: 0 0 24px;
+    line-height: 1.8;
+}
+
+.section-details {
+    display: grid;
+    gap: 20px;
+}
+
+.detail-card {
+    background: var(--business-card-bg);
+    border-radius: 20px;
+    padding: 20px 18px 18px;
+    border: 1px solid var(--business-card-border);
+    box-shadow: 0 12px 30px rgba(77, 62, 255, 0.08);
+}
+
+.detail-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--business-number);
+    margin: 0 0 8px;
+}
+
+.detail-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+}
+
+.detail-card ul {
+    margin: 0;
+    padding-left: 1.2em;
+    line-height: 1.7;
+}
+
+.business-footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.back-link {
+    color: var(--business-accent);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.back-link:hover,
+.back-link:focus {
+    color: #4d3eff;
+    border-bottom-color: currentColor;
+}
+
+@media (min-width: 768px) {
+    .business-hero {
+        padding: 110px 20px 90px;
+    }
+
+    .section-details {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .detail-card {
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .business-section {
+        padding: 24px 18px;
+    }
+}
