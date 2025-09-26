@@ -413,6 +413,8 @@ header.scrolled {
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .logo h1 {
