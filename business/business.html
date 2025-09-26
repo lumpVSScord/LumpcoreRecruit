@@ -330,28 +330,69 @@
             const dropdownMenu = document.querySelector('.dropdown-menu');
             const menuIcon = document.querySelector('.menu-icon');
 
-            if (!navLink || !dropdownMenu || !menuIcon) return;
+            if (navLink && dropdownMenu && menuIcon) {
+                function closeMenu() {
+                    dropdownMenu.classList.remove('visible');
+                    menuIcon.classList.remove('open');
+                }
 
-            function closeMenu() {
-                dropdownMenu.classList.remove('visible');
-                menuIcon.classList.remove('open');
+                navLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('visible');
+                    menuIcon.classList.toggle('open');
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdownMenu.contains(e.target) && !navLink.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+
+                dropdownMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
             }
 
-            navLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                dropdownMenu.classList.toggle('visible');
-                menuIcon.classList.toggle('open');
-            });
+            const header = document.getElementById('header');
+            let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            let ticking = false;
 
-            document.addEventListener('click', function (e) {
-                if (!dropdownMenu.contains(e.target) && !navLink.contains(e.target)) {
-                    closeMenu();
+            function updateDocHeight() {
+                docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            }
+
+            function applyBackgroundState(show) {
+                if (header) {
+                    header.classList.toggle('scrolled', show);
                 }
-            });
+                document.body.classList.toggle('bg-scrolled', show);
+                document.body.classList.toggle('bg-default', !show);
+            }
 
-            dropdownMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMenu);
-            });
+            function handleScroll() {
+                if (ticking) return;
+
+                window.requestAnimationFrame(function () {
+                    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+                    const show = progress > 0.1;
+
+                    applyBackgroundState(show);
+                    ticking = false;
+                });
+
+                ticking = true;
+            }
+
+            window.addEventListener('resize', function () {
+                updateDocHeight();
+                handleScroll();
+            }, { passive: true });
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            updateDocHeight();
+            handleScroll();
         });
     </script>
 </body>
