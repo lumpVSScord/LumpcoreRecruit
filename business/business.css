@@ -41,60 +41,58 @@ body.business-page {
 }
 
 .business-hero {
+    position: relative;
     margin: 120px 0 64px;
     width: 100%;
-    color: var(--business-text);
-    padding: 0;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(135deg, rgba(24, 14, 36, 0.55), rgba(51, 27, 84, 0.38)), url('../assets/images/business/coordinator.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }
 
-.hero-media {
-    margin: 0;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero-intro {
-    width: min(92%, 820px);
-    margin: clamp(28px, 8vw, 52px) auto 0;
-    padding: clamp(28px, 7vw, 48px) clamp(20px, 7vw, 48px);
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 880px);
+    padding: 56px 32px;
     border-radius: 28px;
-    background: linear-gradient(160deg, rgba(255, 244, 238, 0.95), rgba(234, 226, 255, 0.95));
-    border: 1px solid rgba(248, 212, 196, 0.75);
-    box-shadow: 0 22px 60px rgba(177, 143, 224, 0.22);
-    text-align: left;
-    box-sizing: border-box;
+    background: rgba(18, 10, 32, 0.45);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 25px 80px rgba(16, 7, 39, 0.35);
 }
 
 .hero-eyebrow {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    letter-spacing: 0.3rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.32rem;
     text-transform: uppercase;
-    margin: 0 0 18px;
-    color: rgba(54, 38, 31, 0.6);
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 .hero-text h1 {
     font-family: 'Hina Mincho', serif;
     font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-    margin: 0 0 20px;
-    color: var(--business-text);
+    margin: 0 0 24px;
+    color: #ffffff;
 }
 
 .hero-lead {
-    line-height: 1.9;
-    margin: 0;
-    color: rgba(54, 38, 31, 0.82);
+    line-height: 1.8;
+    margin: 0 0 16px;
+    color: rgba(255, 255, 255, 0.88);
 }
 
 .business-quick-links {
@@ -324,12 +322,18 @@ body.business-page {
 }
 
 @media (min-width: 768px) {
-    .hero-image {
-        height: clamp(420px, 60vw, 620px);
+    .business-main {
+        padding-top: 140px;
     }
 
-    .hero-overlay-card {
-        padding: 72px 64px;
+    .hero-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .hero-highlight {
+        flex: 0 0 280px;
+        margin-left: auto;
     }
 
     .section-inner {
@@ -351,13 +355,17 @@ body.business-page {
         height: 56px;
     }
 
-    .business-hero {
-        margin: 96px 0 44px;
+    .business-main {
+        padding: 100px 16px 64px;
     }
 
-    .hero-overlay-card {
-        padding: 32px 22px;
-        border-radius: 22px;
+    .business-hero {
+        padding: 48px 22px;
+        border-radius: 28px;
+    }
+
+    .hero-highlight {
+        padding: 20px;
     }
 
     .business-section {
