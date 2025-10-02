@@ -18,6 +18,11 @@ body.business-page {
     margin: 0;
 }
 
+.business-page *,
+.business-page *::before,
+.business-page *::after {
+    box-sizing: border-box;
+}
 
 .business-page .background-wrapper {
     background-image: url('../assets/images/backgrounds/newbackground.png');
@@ -42,7 +47,7 @@ body.business-page {
 
 .business-hero {
     position: relative;
-    margin: 120px 0 64px;
+    margin: clamp(64px, 12vw, 120px) 0 64px;
     width: 100%;
     min-height: 460px;
     display: flex;
@@ -54,6 +59,17 @@ body.business-page {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    padding: clamp(56px, 9vw, 88px) 0;
+}
+
+.business-hero .hero-inner {
+    width: min(92%, 960px);
+    margin: 0 auto;
+    padding: clamp(48px, 8vw, 72px) clamp(24px, 6vw, 52px);
+    border-radius: 28px;
+    background: rgba(18, 10, 32, 0.52);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 25px 80px rgba(16, 7, 39, 0.35);
 }
 
 .hero-overlay {
@@ -79,7 +95,7 @@ body.business-page {
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: clamp(24px, 5vw, 36px);
 }
 
 .hero-text h1 {
@@ -356,12 +372,46 @@ body.business-page {
     }
 
     .business-main {
-        padding: 100px 16px 64px;
+        padding: 72px 0 64px;
     }
 
     .business-hero {
-        padding: 48px 22px;
-        border-radius: 28px;
+        margin: 0 0 40px;
+        min-height: auto;
+        padding: 0;
+        border-radius: 0;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .business-hero .hero-inner {
+        width: 100%;
+        padding: 40px 20px 44px;
+        border-radius: 0;
+    }
+
+    .business-quick-links {
+        max-width: none;
+        width: 100%;
+        margin: 0 0 40px;
+        border-radius: 0;
+        padding: 24px 20px 28px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.85rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+        margin-bottom: 20px;
+    }
+
+    .hero-lead {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 
     .hero-highlight {
@@ -369,8 +419,11 @@ body.business-page {
     }
 
     .business-section {
-        padding: 24px 20px;
-        border-radius: 24px;
+        max-width: none;
+        width: 100%;
+        margin: 0 0 48px;
+        padding: 28px 20px;
+        border-radius: 0;
     }
 }
 
