@@ -79,6 +79,31 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("employee-role").textContent = employee.role || employee.department || "役職情報なし";
       document.getElementById("employee-mbti").textContent = `MBTI: ${employee.mbti}`;
 
+      const backLink = document.getElementById("back-to-index");
+      if (backLink) {
+        backLink.setAttribute("aria-label", "トップページの社員インタビュー一覧へ戻る");
+      }
+
+      const nextLink = document.getElementById("next-employee-link");
+      if (nextLink) {
+        const currentIndex = data.findIndex((emp) => emp.id === employeeId);
+        if (currentIndex !== -1) {
+          const nextEmployee = data[(currentIndex + 1) % data.length];
+          nextLink.href = `detail.html?id=${nextEmployee.id}`;
+          nextLink.setAttribute("aria-label", `${nextEmployee.name}のインタビューへ移動`);
+
+          const nextTitle = nextLink.querySelector(".nav-title");
+          if (nextTitle) {
+            nextTitle.textContent = `次の社員：${nextEmployee.name}`;
+          }
+
+          const nextSubtitle = nextLink.querySelector(".nav-subtitle");
+          if (nextSubtitle) {
+            nextSubtitle.textContent = `${nextEmployee.role}のインタビューを見る`;
+          }
+        }
+      }
+
       const interviewContainer = document.getElementById("employee-interview");
       if (Array.isArray(employee.interview)) {
         employee.interview.forEach((qa) => {

@@ -101,16 +101,6 @@
         opacity: 0.58;
     }
 
-    .business-hero .hero-inner {
-        width: 100%;
-        max-width: 520px;
-        margin: 0 auto;
-        padding: 32px 24px 40px;
-        border-radius: 22px;
-        background: rgba(32, 22, 72, 0.28);
-        backdrop-filter: blur(10px);
-    }
-
     .business-quick-links {
         max-width: none;
         width: 100%;
@@ -127,15 +117,6 @@
     .hero-text h1 {
         font-size: clamp(1.8rem, 7vw, 2.4rem);
         margin-bottom: 20px;
-    }
-
-    .hero-lead {
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-
-    .hero-highlight {
-        padding: 20px;
     }
 
     .business-section {

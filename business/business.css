@@ -303,54 +303,6 @@ body.business-page {
     color: var(--business-accent);
 }
 
-.section-details {
-    display: grid;
-    gap: 20px;
-}
-
-.detail-card {
-    background: linear-gradient(155deg, rgba(255, 244, 238, 0.94), rgba(235, 228, 255, 0.94));
-    border-radius: 20px;
-    padding: 22px 20px 20px;
-    border: 1px solid rgba(248, 212, 196, 0.65);
-    box-shadow: 0 18px 40px rgba(77, 62, 255, 0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.detail-card:hover,
-.detail-card:focus-within {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 45px rgba(77, 62, 255, 0.2);
-}
-
-.detail-number {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: var(--business-number);
-    margin: 0 0 10px;
-}
-
-.detail-card h3 {
-    font-size: 1.05rem;
-    margin: 0 0 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.detail-card h3 i {
-    color: var(--business-accent);
-    font-size: 1.1rem;
-}
-
-.detail-card ul {
-    margin: 0;
-    padding-left: 1.2em;
-    line-height: 1.7;
-    color: rgba(54, 38, 31, 0.85);
-}
-
 .business-footer {
     text-align: center;
     padding: 40px 20px 60px;
