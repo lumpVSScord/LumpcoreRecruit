@@ -113,14 +113,24 @@
         </p>
     </section>
 
-    <section id="employee-interviews" class="hidden fade-in">
-    <h2>夢忠人紹介</h2>
-    <div class="employee-grid"></div>
-    <button id="load-more-btn">もっと見る</button>
+    <section id="employee-interviews" class="hidden fade-in" aria-labelledby="employee-hero-title">
+        <div class="section-hero-intro">
+            <div class="section-hero-card">
+                <p class="section-hero-eyebrow">Members</p>
+                <h2 id="employee-hero-title" class="section-hero-title">夢忠人紹介</h2>
+            </div>
+        </div>
+        <div class="employee-grid"></div>
+        <button id="load-more-btn">もっと見る</button>
     </section>
 
-    <section id="business" class="hidden fade-in">
-        <h2>事業紹介</h2>
+    <section id="business" class="hidden fade-in" aria-labelledby="business-hero-title">
+        <div class="business-hero-intro section-hero-intro">
+            <div class="section-hero-card">
+                <p class="section-hero-eyebrow">Business</p>
+                <h2 id="business-hero-title" class="section-hero-title">事業紹介</h2>
+            </div>
+        </div>
         <div class="business-container">
 
             <div class="business-item">
@@ -173,8 +183,13 @@
         </div>
     </section>
 
-    <section id="news" class="hidden fade-in">
-        <h2>ニュース</h2>
+    <section id="news" class="hidden fade-in" aria-labelledby="news-hero-title">
+        <div class="section-hero-intro">
+            <div class="section-hero-card">
+                <p class="section-hero-eyebrow">News</p>
+                <h2 id="news-hero-title" class="section-hero-title">ニュース</h2>
+            </div>
+        </div>
         <div class="filter-container">
             <label for="news-filter">カテゴリ:</label>
             <select id="news-filter">

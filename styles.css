@@ -754,19 +754,6 @@ nav ul li a:hover {
 🧍‍♂️ 社員紹介セクション（#employee-interviews）
 ============================================= */
 
-/* タイトルアニメーション */
-#employee-interviews h2 {
-  text-align: center;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: bold;
-  margin-bottom: 40px;
-  background: linear-gradient(270deg, #4169e1, #c07ddf, #ff69b4);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: backgroundAnimation 5s ease infinite;
-}
-
 /* グリッドレイアウト */
 .employee-grid {
   display: grid;
@@ -1012,6 +999,101 @@ nav ul li a:hover {
 }
 
 /* =============================================
+✨ セクション共通ヒーローブロック
+============================================= */
+.section-hero-intro {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(32px, 6vw, 56px);
+  padding: 0 20px;
+}
+
+.section-hero-card {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(16px, 5vw, 52px);
+  width: min(100%, 880px);
+  padding: clamp(18px, 4vw, 30px) clamp(36px, 10vw, 76px);
+  border-radius: 26px;
+  background: rgba(9, 6, 24, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(8, 4, 24, 0.24);
+}
+
+.section-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(130deg, rgba(255, 238, 226, 0.6), rgba(213, 198, 255, 0.58));
+  opacity: 0.85;
+  z-index: -1;
+  filter: blur(16px);
+}
+
+.section-hero-card::after {
+  content: "";
+  flex: 0 0 auto;
+  height: 2px;
+  width: clamp(160px, 30vw, 280px);
+  margin-left: 0;
+  margin-top: clamp(10px, 2vw, 18px);
+  background: linear-gradient(90deg, rgba(255, 214, 189, 0.92), rgba(160, 122, 232, 0.95));
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.section-hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.32rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  flex: 0 1 auto;
+  text-align: left;
+}
+
+.section-hero-title {
+  font-family: 'Hina Mincho', serif;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  margin: 0;
+  color: #ffffff;
+  flex: 0 1 auto;
+  text-align: left;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .section-hero-intro {
+    padding: 0 12px;
+  }
+
+  .section-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(12px, 4vw, 20px);
+    padding: clamp(18px, 6vw, 28px) clamp(24px, 8vw, 48px);
+  }
+
+  .section-hero-card::after {
+    width: clamp(120px, 40vw, 220px);
+  }
+
+  .section-hero-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.24rem;
+  }
+
+  .section-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+}
+
+/* =============================================
 🏢 事業紹介セクション（#business）
 ============================================= */
 #business {
@@ -1020,18 +1102,6 @@ nav ul li a:hover {
     border-radius: 0;
     box-shadow: none;
     text-align: center;
-}
-
-#business h2 {
-  text-align: center;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: bold;
-  margin-bottom: 40px;
-  background: linear-gradient(270deg, #4169e1, #c07ddf, #ff69b4);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: backgroundAnimation 5s ease infinite;
 }
 
 .business-container {
