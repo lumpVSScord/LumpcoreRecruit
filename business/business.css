@@ -94,23 +94,24 @@ body.business-page {
     width: min(1120px, 100%);
     display: flex;
     justify-content: flex-start;
-    padding-left: clamp(12px, 4vw, 64px);
+    padding: 0 clamp(12px, 4vw, 64px);
 }
 
 .hero-text {
     position: relative;
     z-index: 0;
     display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-width: clamp(280px, 36vw, 420px);
-    padding: clamp(20px, 4vw, 32px) clamp(26px, 5vw, 44px);
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(16px, 5vw, 52px);
+    width: min(100%, 920px);
+    padding: clamp(18px, 4vw, 30px) clamp(36px, 10vw, 76px);
     border-radius: 26px;
     background: rgba(11, 4, 28, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(18px);
     box-shadow: 0 28px 70px rgba(8, 4, 24, 0.32);
-    align-items: flex-start;
 }
 
 .hero-text::before {
@@ -126,18 +127,23 @@ body.business-page {
 
 .hero-text::after {
     content: "";
-    display: block;
-    width: clamp(72px, 18vw, 140px);
+    flex: 0 0 auto;
     height: 2px;
+    width: clamp(160px, 30vw, 280px);
+    margin-left: 0;
+    margin-top: clamp(10px, 2vw, 18px);
     background: linear-gradient(90deg, rgba(255, 214, 189, 0.92), rgba(160, 122, 232, 0.95));
     border-radius: 999px;
+    align-self: flex-start;
 }
 
 .hero-text h1 {
     font-family: 'Hina Mincho', serif;
-    font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+    font-size: clamp(2.6rem, 6vw, 4rem);
     margin: 0;
     color: #ffffff;
+    flex: 0 1 auto;
+    text-align: left;
 }
 
 .hero-eyebrow {
@@ -147,12 +153,8 @@ body.business-page {
     text-transform: uppercase;
     margin: 0;
     color: rgba(255, 255, 255, 0.72);
-}
-
-@media (min-width: 900px) {
-    .hero-text {
-        max-width: clamp(320px, 32vw, 480px);
-    }
+    flex: 0 1 auto;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -161,20 +163,47 @@ body.business-page {
     }
 
     .hero-layout {
-        justify-content: center;
-        padding-left: 0;
+        padding: 0;
         width: 100%;
     }
 
     .hero-text {
-        max-width: min(480px, 100%);
-        text-align: center;
-        align-items: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: clamp(18px, 10vw, 40px);
+        padding: clamp(20px, 10vw, 34px) clamp(24px, 10vw, 44px);
+        justify-content: flex-start;
     }
 
     .hero-text::after {
-        margin-left: auto;
-        margin-right: auto;
+        width: clamp(120px, 50vw, 220px);
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.4rem, 12vw, 3.2rem);
+        text-align: left;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.88rem;
+        letter-spacing: 0.26rem;
+        text-align: left;
+    }
+
+    .hero-text > * {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(16px, 12vw, 32px);
+    }
+
+    .hero-text::after {
+        width: clamp(96px, 60vw, 180px);
     }
 }
 
@@ -409,9 +438,9 @@ body.business-page {
     }
 
     .business-hero {
-        margin: var(--business-hero-overlap-offset) 0 40px;
+        margin: var(--business-hero-overlap-offset) calc(50% - 50vw) 40px;
         min-height: 420px;
-        padding: 68px 20px 56px;
+        padding: 68px 0 56px;
         border-radius: 0;
         background-position: top center;
         background-repeat: no-repeat;
@@ -479,7 +508,7 @@ body.business-page {
     .hero-media img {
         width: 100vw;
         max-width: none;
-        margin: 0 calc(50% - 50vw);
+        margin: 0;
     }
 
     .hero-text {
