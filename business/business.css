@@ -9,6 +9,7 @@
     --business-accent: #a07ae8;
     --business-number: #f0cde9;
     --business-shadow: 0 25px 70px rgba(177, 143, 224, 0.18);
+    --business-header-height: 60px;
 }
 
 body.business-page {
@@ -325,13 +326,13 @@ body.business-page {
 
 @media (min-width: 768px) {
     .business-main {
-        --business-hero-overlap-offset: -140px;
-        padding-top: 140px;
+        --business-hero-overlap-offset: 0px;
+        padding-top: var(--business-header-height, 60px);
     }
 
     .hero-content {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 
     .hero-highlight {
