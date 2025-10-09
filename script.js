@@ -110,28 +110,44 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   const menuIcon = document.querySelector('.menu-icon');
 
-  navLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    dropdownMenu.classList.toggle('visible');
-    menuIcon.classList.toggle('open');
-  });
+  if (navLink && dropdownMenu && menuIcon) {
+    function openDropdown() {
+      dropdownMenu.classList.add('visible');
+      dropdownMenu.classList.remove('hidden');
+      menuIcon.classList.add('open');
+    }
 
-  document.addEventListener('click', function (e) {
-    if (!navLink.contains(e.target) && !dropdownMenu.contains(e.target)) {
-      hideElement(dropdownMenu);
+    function closeDropdown() {
+      dropdownMenu.classList.remove('visible');
+      dropdownMenu.classList.remove('hidden');
       menuIcon.classList.remove('open');
     }
-  });
 
-  dropdownMenu.addEventListener('click', function (e) {
-    if (e.target === dropdownMenu) {
-      hideElement(dropdownMenu);
-      menuIcon.classList.remove('open');
+    function toggleDropdown(event) {
+      event.preventDefault();
+      if (dropdownMenu.classList.contains('visible')) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
     }
-  });
 
-  // ドロップダウンリンクのホバー効果
-  const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
+    navLink.addEventListener('click', toggleDropdown);
+
+    document.addEventListener('click', function (e) {
+      if (!navLink.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    dropdownMenu.addEventListener('click', function (e) {
+      if (e.target === dropdownMenu) {
+        closeDropdown();
+      }
+    });
+
+    // ドロップダウンリンクのホバー効果
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
     dropdownLinks.forEach(link => {
       link.addEventListener('mouseover', () => {
         link.style.transition = 'color 0.3s ease, background 0.3s ease, transform 0.3s ease';
@@ -145,11 +161,13 @@ document.addEventListener('DOMContentLoaded', function () {
         link.style.background = 'transparent';
         link.style.transform = 'scale(1)';
       });
-      link.addEventListener('click', () => {
-        hideElement(dropdownMenu);
-        menuIcon.classList.remove('open');
-      });
+      link.addEventListener('click', closeDropdown);
     });
+
+    // 初期表示やページ戻り時に必ず閉じた状態にリセット
+    closeDropdown();
+    window.addEventListener('pageshow', closeDropdown);
+  }
 
   // ニュースフィルタ機能
   const newsData = [
