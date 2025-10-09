@@ -1266,3 +1266,153 @@ nav ul li a:hover {
     font-size: 1.2em;
     color: #fff;
 }
+
+/* =============================================
+🔗 LINK HUB セクション
+============================================= */
+.link-hub {
+  margin: 80px auto 100px;
+  padding: 60px 40px;
+  max-width: 1080px;
+  border-radius: 32px;
+  background: rgba(10, 10, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+}
+
+.link-hub-header {
+  text-align: center;
+  margin-bottom: 48px;
+  color: #f5f5ff;
+}
+
+.link-hub-description {
+  margin: 12px auto 0;
+  max-width: 640px;
+  color: rgba(245, 245, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(228, 236, 255, 0.85));
+  color: #0d1c3d;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 26px 48px rgba(10, 12, 40, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 32px 64px rgba(10, 12, 40, 0.22);
+}
+
+.link-card span {
+  position: relative;
+  z-index: 1;
+}
+
+.link-card-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.link-card-title {
+  margin: 12px 0 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.link-card-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(13, 28, 61, 0.75);
+  line-height: 1.7;
+}
+
+.link-card-media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+
+.link-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.link-card:hover .link-card-media img {
+  transform: scale(1.08);
+}
+
+.link-card-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-dark-start);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 12px 24px rgba(10, 12, 40, 0.18);
+}
+
+.link-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  gap: 6px;
+  min-height: 200px;
+}
+
+.link-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.link-card-action {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-dark-start);
+  transition: color 0.3s ease;
+}
+
+.link-card-arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .link-card-action {
+  color: var(--primary-end);
+}
+
+.link-card:hover .link-card-arrow {
+  transform: translateX(6px);
+}
