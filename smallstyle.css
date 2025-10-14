@@ -199,25 +199,25 @@
   }
 
   .link-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .link-card {
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
   .link-card-media {
-    height: 180px;
+    height: 150px;
   }
 
   .link-card-content {
-    padding: 24px;
+    padding: 20px;
     min-height: auto;
   }
 
   .link-card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   
   /* 社員カードを2列に並べるグリッド設定 */
