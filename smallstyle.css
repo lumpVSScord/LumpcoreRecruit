@@ -198,9 +198,15 @@
     overflow-wrap: anywhere;
   }
 
+  .link-hub {
+    margin: 48px auto 72px;
+    padding: 36px 18px 40px;
+    border-radius: 18px;
+  }
+
   .link-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .link-card {
@@ -463,6 +469,38 @@
   #news-list li {
     font-size: 0.95em;
     padding: 15px;
+  }
+
+.site-footer {
+    margin-top: 48px;
+    padding: 28px 18px 36px;
+    border-radius: 0;
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .site-footer__logo-wrap {
+    padding: 10px 16px;
+    border-radius: 14px;
+  }
+
+  .site-footer__logo {
+    width: clamp(88px, 30vw, 110px);
+  }
+
+  .site-footer__links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .site-footer__links a {
+    font-size: 0.95rem;
   }
 }
 
