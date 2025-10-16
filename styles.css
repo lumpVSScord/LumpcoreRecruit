@@ -77,7 +77,6 @@ p {
 ============================================= */
 header {
     background: #000;
-    transition: background 0.5s ease;
     color: #fff;
     position: fixed;
     width: 100%;
@@ -87,10 +86,6 @@ header {
     height: 60px;
     display: flex;
     align-items: center;
-}
-
-header.scrolled {
-    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
 }
 
 .nav-list {
@@ -207,7 +202,6 @@ header.scrolled {
     box-sizing: border-box;
     overflow-y: auto;
     z-index: -1;
-    transition: background 0.5s ease;
     flex-direction: column;
     align-items: flex-end;
   }
@@ -239,10 +233,6 @@ header.scrolled {
   .dropdown-menu li a:visited,
   .dropdown-menu li a:active {
     color: #fff;
-  }
-
-  header.scrolled .dropdown-menu {
-    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
   }
 
 .container {

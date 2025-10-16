@@ -47,11 +47,6 @@
   align-items: center;
   }
 
-  header.scrolled .dropdown-menu {
-    padding-top: 80px; /* header高さ60px + 余白20px */
-    background: linear-gradient(45deg, var(--primary-start), var(--primary-end));
-  }
-
   #top-image {
     margin-bottom: -150px ; /* ← 余白を縮める */
   }
