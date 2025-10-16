@@ -1417,8 +1417,8 @@ nav ul li a:hover {
   position: relative;
   margin-top: clamp(56px, 8vw, 120px);
   padding: clamp(32px, 6vw, 56px) clamp(20px, 6vw, 48px);
-  background: linear-gradient(135deg, rgba(65, 105, 225, 0.96) 0%, rgba(255, 105, 180, 0.96) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   overflow: hidden;
 }
@@ -1427,9 +1427,8 @@ nav ul li a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 55%),
-              radial-gradient(circle at bottom right, rgba(15, 24, 64, 0.35), transparent 60%);
-  mix-blend-mode: screen;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 60%);
   pointer-events: none;
 }
 
