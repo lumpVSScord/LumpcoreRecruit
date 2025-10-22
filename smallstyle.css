@@ -473,22 +473,37 @@
   }
 
   .site-footer__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px 20px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .site-footer__nav,
+  .site-footer__links {
+    width: 100%;
   }
 
   .site-footer__logo-wrap {
     padding: 10px 16px;
     border-radius: 14px;
+    flex-shrink: 0;
   }
 
   .site-footer__logo {
     width: clamp(88px, 30vw, 110px);
   }
 
-  .site-footer__column {
-    width: 100%;
+  .site-footer__copy {
+    margin: 0;
   }
 
   .site-footer__column-title {
