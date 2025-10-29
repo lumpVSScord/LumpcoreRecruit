@@ -1166,39 +1166,6 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-.business-more {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.business-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 28px;
-    border-radius: 999px;
-    background: linear-gradient(45deg, #4d3eff, #9c4dff);
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 12px 24px #4d3eff40;
-}
-
-.business-more-link::after {
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 0.9rem;
-}
-
-.business-more-link:hover,
-.business-more-link:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 32px rgba(77, 62, 255, 0.3);
-}
-
-
 /* =============================================
 📰 ニュースセクション（#news）
 ============================================= */
