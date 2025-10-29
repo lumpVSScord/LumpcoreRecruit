@@ -171,9 +171,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ニュースフィルタ機能
   const newsData = [
-    { title: "2025年3月 採用説明会", date: "2025-03-15", category: "採用" },
-    { title: "2025年2月 インターンシップ", date: "2025-02-20", category: "採用" },
-    { title: "2025年1月 新卒採用イベント", date: "2025-01-10", category: "採用" },
+    {
+      title: "採用説明会レポート",
+      date: "2025-03-15",
+      category: "採用",
+      url: "news/20250315-recruit-session.html"
+    },
+    {
+      title: "Winter Festival イベントレポート",
+      date: "2025-02-20",
+      category: "イベント",
+      url: "news/20250220-winter-festival.html"
+    },
+    {
+      title: "メンバー紹介：新卒1年目の挑戦",
+      date: "2025-01-10",
+      category: "メンバー紹介",
+      url: "news/20250110-member-feature.html"
+    },
   ];
 
   const newsList = document.getElementById('news-list');
@@ -184,7 +199,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const filtered = filter === 'all' ? newsData : newsData.filter(news => news.category === filter);
     filtered.slice(0, 3).forEach(news => {
       const item = document.createElement('li');
-      item.innerHTML = `<span>${news.date}</span><span>${news.title}</span>`;
+      const link = document.createElement('a');
+      link.href = news.url;
+      link.classList.add('news-link');
+      link.innerHTML = `<span>${news.date}</span><span>${news.title}</span>`;
+      item.appendChild(link);
       newsList.appendChild(item);
     });
   }
