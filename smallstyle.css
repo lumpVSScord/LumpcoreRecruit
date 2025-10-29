@@ -460,7 +460,7 @@
   }
 
   .mission-text {
-    top: 37%; /* ← MISSIONだけ下げる */
+    top: 34%; /* ← MISSIONの見出し位置を少し上に調整 */
   }
 
   .mission-text h3 {
