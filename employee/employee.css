@@ -84,7 +84,7 @@
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0 0 40px auto;
-  text-align: right;
+  text-align: left;
 }
 
 .answer::after {
@@ -265,6 +265,13 @@
   #employee-photo {
     width: 100%;
   }
+
+  .qa-block .answer {
+    margin: 0 auto 32px 0;
+    max-width: 100%;
+    text-align: left;
+  }
+
   .nav-button {
     align-items: center;
     text-align: center;

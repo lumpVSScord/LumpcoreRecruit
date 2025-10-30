@@ -172,22 +172,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // ニュースフィルタ機能
   const newsData = [
     {
-      title: "採用説明会レポート",
-      date: "2025-03-15",
+      title: "ジョブドラフトFes参加!",
+      date: "2025-07-09",
       category: "採用",
-      url: "news/20250315-recruit-session.html"
+      url: "news/20250709.html"
     },
     {
       title: "Winter Festival イベントレポート",
       date: "2025-02-20",
       category: "イベント",
-      url: "news/20250220-winter-festival.html"
+      url: "news/20250220.html"
     },
     {
       title: "メンバー紹介：新卒1年目の挑戦",
       date: "2025-01-10",
       category: "メンバー紹介",
-      url: "news/20250110-member-feature.html"
+      url: "news/20250110.html"
     },
   ];
 

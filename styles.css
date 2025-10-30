@@ -397,17 +397,19 @@ header {
 
 .logo h1 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   color: #ffffff;
+  line-height: 1;
 }
 
 .subtitle {
   margin-left: 10px;
-  font-size: 1em;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
   color: #ffffff;
   opacity: 0.8;
+  line-height: 1;
 }
 
 /* =============================================
