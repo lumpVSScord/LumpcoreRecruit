@@ -1,15 +1,18 @@
 // 共通ユーティリティ
 function showElement(el) {
+  if (!el) return;
   el.classList.add('visible');
   el.classList.remove('hidden');
 }
 
 function hideElement(el) {
+  if (!el) return;
   el.classList.add('hidden');
   el.classList.remove('visible');
 }
 
 function toggleClass(el, className, condition) {
+  if (!el) return;
   if (condition) {
     el.classList.add(className);
   } else {
@@ -20,6 +23,15 @@ function toggleClass(el, className, condition) {
 // トップ画像アニメーション完了後にセクションを表示
 window.addEventListener('load', function () {
   const topImage = document.getElementById('top-image');
+
+  if (!topImage) {
+    const sections = document.querySelectorAll('section, header');
+    sections.forEach(section => {
+      section.style.display = '';
+      showElement(section);
+    });
+    return;
+  }
 
   // 最初にトップスライドをフェードイン
   const carouselRows = document.querySelectorAll('#top-image .carousel-row');
@@ -208,8 +220,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  newsFilter.addEventListener('change', () => displayNews(newsFilter.value));
-  displayNews('all');
+  if (newsList && newsFilter) {
+    newsFilter.addEventListener('change', () => displayNews(newsFilter.value));
+    displayNews('all');
+  }
 
   // IntersectionObserver を使ったフェードイン表示
   const fadeObserver = new IntersectionObserver((entries, obs) => {

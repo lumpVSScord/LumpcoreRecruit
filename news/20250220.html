@@ -7,11 +7,45 @@
     <meta name="description" content="2025年2月に実施したWinter Festivalのイベントレポートです。">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../smallstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho:wght@400&family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body class="bg-default news-detail-page">
-    <header class="news-detail-header">
-      <a class="news-detail-back" href="../index.html#news">← ニュース・トピックス一覧へ戻る</a>
+    <header id="header">
+      <div class="container">
+        <a href="../index.html#top-image" class="logo" aria-label="トップに戻る">
+          <h1>LUMPCORE</h1>
+          <span class="subtitle">Recruit</span>
+        </a>
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link">
+                <div class="menu-icon">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="../index.html#purpose">・Purpose</a></li>
+                <li><a href="../index.html#mission">・Mission</a></li>
+                <li><a href="../index.html#employee-interviews">・夢忠人紹介</a></li>
+                <li><a href="../index.html#business">・事業紹介</a></li>
+                <li><a href="../index.html#news">・ニュース・トピックス</a></li>
+                <li><a href="../index.html#contact">・お問い合わせ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
+    <div class="news-detail-breadcrumb">
+      <a class="news-detail-back-link" href="../index.html#news">
+        <span aria-hidden="true">←</span>
+        <span>ニュース・トピックス一覧へ戻る</span>
+      </a>
+    </div>
     <section class="news-detail-hero">
       <div class="news-detail-hero-inner">
         <p class="news-detail-meta"><span class="news-detail-category">イベント</span><span class="news-detail-meta-separator" aria-hidden="true">・</span><time datetime="2025-02-20">2025.02.20</time></p>
@@ -39,5 +73,6 @@
         </section>
       </article>
     </main>
+    <script src="../script.js" defer></script>
   </body>
 </html>
