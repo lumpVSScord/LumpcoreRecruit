@@ -184,19 +184,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // ニュースフィルタ機能
   const newsData = [
     {
-      title: "ジョブドラフトFes参加!",
+      title: "ジョブドラフトFes2025参加!",
       date: "2025-07-09",
       category: "採用",
       url: "news/20250709.html"
     },
     {
-      title: "Winter Festival イベントレポート",
+      title: "FAIRYCOTTONCANDYイベント開催のお知らせ",
       date: "2025-02-20",
       category: "イベント",
       url: "news/20250220.html"
     },
     {
-      title: "メンバー紹介：新卒1年目の挑戦",
+      title: "夢忠人紹介更新！",
       date: "2025-01-10",
       category: "メンバー紹介",
       url: "news/20250110.html"
