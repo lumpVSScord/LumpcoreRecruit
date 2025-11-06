@@ -190,13 +190,13 @@ document.addEventListener('DOMContentLoaded', function () {
       url: "news/20250709.html"
     },
     {
-      title: "FAIRYCOTTONCANDYイベント開催のお知らせ",
+      title: "FAIRYCOTTONCANDYイベント開催のお知らせ!",
       date: "2025-02-20",
       category: "イベント",
       url: "news/20250220.html"
     },
     {
-      title: "夢忠人紹介更新！",
+      title: "夢忠人紹介更新!",
       date: "2025-01-10",
       category: "メンバー紹介",
       url: "news/20250110.html"

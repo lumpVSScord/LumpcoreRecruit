@@ -1495,6 +1495,18 @@ nav ul li a:hover {
     color: #4169e1;
 }
 
+.news-detail-photo {
+    margin: 2.5rem 0;
+}
+
+.news-detail-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* =============================================
 🔗 LINK HUB セクション
 ============================================= */
