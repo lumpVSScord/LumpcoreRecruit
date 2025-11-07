@@ -103,6 +103,15 @@
     transition: opacity 0.5s ease;
   }
 
+  body.news-detail-page .background-wrapper {
+    background-image: url('assets/images/backgrounds/newbackground-mobile.png');
+  }
+
+  body.news-detail-page .background-wrapper::after {
+    background-image: url('assets/images/backgrounds/newbackground-mobile.png');
+    opacity: 1;
+  }
+
   body.bg-scrolled .background-wrapper::after {
     opacity: 1;
   }

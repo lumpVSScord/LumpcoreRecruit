@@ -38,6 +38,10 @@ html, body {
   background-position: center;
 }
 
+body.news-detail-page .background-wrapper {
+  background-image: url('assets/images/backgrounds/newbackground.png');
+}
+
 .background-wrapper::after {
   content: "";
   position: absolute;
@@ -48,6 +52,11 @@ html, body {
   background-position: center;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+body.news-detail-page .background-wrapper::after {
+  background-image: url('assets/images/backgrounds/newbackground.png');
+  opacity: 1;
 }
 
 body.bg-scrolled .background-wrapper::after {
@@ -1307,7 +1316,8 @@ nav ul li a:hover {
     gap: clamp(32px, 6vw, 60px);
     padding: clamp(104px, 14vw, 152px) clamp(16px, 6vw, 64px) clamp(80px, 10vw, 120px);
     box-sizing: border-box;
-    background-color: #f5f7fb;
+    background: none;
+    background-color: transparent;
     color: #1a2238;
 }
 
