@@ -184,6 +184,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // ニュースフィルタ機能
   const newsData = [
     {
+      title: "夢忠人紹介更新：黒井彪雅",
+      date: "2025-07-30",
+      category: "メンバー紹介",
+      url: "news/20250730.html"
+    },
+    {
       title: "ジョブドラフトFes2025参加!",
       date: "2025-07-09",
       category: "採用",
@@ -194,12 +200,6 @@ document.addEventListener('DOMContentLoaded', function () {
       date: "2025-02-20",
       category: "イベント",
       url: "news/20250220.html"
-    },
-    {
-      title: "夢忠人紹介更新!",
-      date: "2025-01-10",
-      category: "メンバー紹介",
-      url: "news/20250110.html"
     },
   ];
 
