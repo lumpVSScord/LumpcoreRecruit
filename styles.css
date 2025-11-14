@@ -422,7 +422,7 @@ header {
 }
 
 /* =============================================
-📱 エントリーナビゲーション（#entry-nav-wrap）
+📱 ナビゲーション
 ============================================= */
 nav ul {
     list-style: none;
@@ -467,60 +467,6 @@ nav ul li a:hover {
 .visible {
   opacity: 1;
   pointer-events: auto;
-}
-
-.entry-nav-wrap {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 9999; /* ← 最前面に配置！ */
-}
-
-.entry-nav-link.apply {
-    background: linear-gradient(45deg, #ff69b4, #ff1493);
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.entry-nav-link.requirements {
-    background: linear-gradient(45deg, #4169e1, #1e90ff);
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.entry-nav-link .icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.entry-nav-link.apply:hover {
-    background: linear-gradient(45deg, #ff1493, #ff69b4);
-    transform: translateY(-2px);
-}
-
-.entry-nav-link.requirements:hover {
-    background: linear-gradient(45deg, #1e90ff, #4169e1);
-    transform: translateY(-2px);
-}
-
-.entry-nav-link .text {
-    font-weight: bold;
 }
 
 .animate { animation: fadeInZoom 2s ease-in-out;}

@@ -240,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // スクロールによる背景・ナビ表示切り替え
   const header = document.getElementById('header');
-  const entryNavWrap = document.getElementById('entry-nav-wrap');
   let docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
   window.addEventListener('resize', () => {
@@ -259,8 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const show = progress > 0.1;
 
         toggleClass(header, 'scrolled', show);
-        toggleClass(entryNavWrap, 'visible', show);
-        toggleClass(entryNavWrap, 'hidden', !show);
         toggleClass(document.body, 'bg-scrolled', show);
         toggleClass(document.body, 'bg-default', !show);
         ticking = false;
