@@ -1062,6 +1062,7 @@ nav ul li a:hover {
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
     overflow: hidden;
     border-radius: 28px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.96));
@@ -1104,6 +1105,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: clamp(12px, 2vw, 18px);
+    flex: 1;
 }
 
 .business-description h3 {
@@ -1121,7 +1123,7 @@ nav ul li a:hover {
 }
 
 .m-buttons-img-txt-08-arrow-wrap {
-    margin-top: 8px;
+    margin-top: auto;
     padding: 12px 24px;
     background: linear-gradient(120deg, rgba(65, 105, 225, 0.95), rgba(255, 105, 180, 0.9));
     color: #fff;
@@ -1135,6 +1137,7 @@ nav ul li a:hover {
     gap: 10px;
     font-weight: 600;
     letter-spacing: 0.04em;
+    align-self: flex-start;
 }
 
 .m-buttons-img-txt-08-arrow-wrap .icon {
