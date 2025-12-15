@@ -374,9 +374,10 @@
   /* 社員カードを2列に並べるグリッド設定 */
   .employee-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列表示 */
-    gap: 12px; /* カード同士の余白 */
-    padding: 2px; /* 外側の余白を縮めてカードを拡大 */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列表示を維持しつつ列幅を最大化 */
+    gap: 14px; /* 基本の縦間隔をキープ */
+    column-gap: 12px; /* カード同士の横方向の余白を広げて間隔を確保 */
+    padding: 6px; /* 画面端にわずかに余白を戻して窮屈さを解消 */
     margin: 0;
   }
 
@@ -399,7 +400,7 @@
   .employee-card .image-wrapper {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    aspect-ratio: 4 / 5; /* やや縦長にしてカードを大きく */
     border-radius: inherit;
     overflow: hidden;
   }
@@ -412,8 +413,8 @@
 
   /* 名前やMBTIなどの情報位置とサイズ調整 */
   .employee-card .employee-info {
-    bottom: 20px;
-    left: 6px;
+    bottom: 22px;
+    left: 8px;
   }
 
   .employee-card .employee-name-overlay {
@@ -431,15 +432,15 @@
 
   /* 入社日ラベルを縮小 */
   .employee-card .join-date {
-    bottom: 6px;
-    left: 6px;
+    bottom: 8px;
+    left: 8px;
     font-size: 0.5rem;
   }
 
   /* 詳細リンクを縮小 */
   .employee-card .detail-link {
-    bottom: 6px;
-    right: 6px;
+    bottom: 8px;
+    right: 8px;
     font-size: 0.6rem;
   }
 
