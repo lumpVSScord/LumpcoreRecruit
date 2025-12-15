@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (employeeId === null) {
       const grid = document.querySelector(".employee-grid");
       const loadMoreBtn = document.getElementById("load-more-btn");
+      const section = document.getElementById("employee-interviews");
       if (!grid || !loadMoreBtn) return;
 
       const getMbtiClass = (mbti) => {
@@ -55,11 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
           requestAnimationFrame(() => card.classList.add("visible"));
         });
         currentIndex += slice.length;
-        if (currentIndex >= data.length) {
-          loadMoreBtn.style.display = "none";
-        }
+        loadMoreBtn.style.display = currentIndex >= data.length ? "none" : "block";
       };
 
+      if (section) {
+        section.classList.remove("hidden");
+        section.classList.add("visible");
+      }
+      loadMoreBtn.style.display = "block";
       loadMoreBtn.addEventListener("click", loadMore);
       loadMore();
     } else {
@@ -137,18 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (employeeId === null) {
     const section = document.getElementById("employee-interviews");
     if (!section) return;
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          obs.unobserve(entry.target);
-          loadData();
-        }
-      });
-    }, {
-      rootMargin: "100px",
-      threshold: 0.1,
-    });
-    observer.observe(section);
+    section.classList.remove("hidden");
+    section.classList.add("visible");
+    loadData();
   } else {
     loadData();
   }

@@ -690,6 +690,11 @@ nav ul li a:hover {
 ============================================= */
 
 /* グリッドレイアウト */
+#employee-interviews.fade-in {
+  opacity: 1;
+  transform: none;
+}
+
 .employee-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
