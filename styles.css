@@ -708,12 +708,11 @@ nav ul li a:hover {
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
   cursor: pointer;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
-    linear-gradient(135deg, #ff69b4, #4169e1) border-box;
+  border: 2px solid #000;
+  background-color: #0d0d0d;
   backdrop-filter: blur(6px);
 }
+
 
 .employee-card:hover {
   transform: translateY(-6px);
@@ -860,11 +859,7 @@ nav ul li a:hover {
   font-size: 1.1rem;
   line-height: 1.8;
   font-family: 'Hina Mincho', serif;
-  background: linear-gradient(45deg, #4169e1, #ff69b4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: #fff;
   margin-bottom: 1em;
 }
 
